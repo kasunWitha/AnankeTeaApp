@@ -1,0 +1,29 @@
+<div class="card card-chart">
+    <div [ngClass]=" status == 0? 'card-header card-header-success' : (status == 1? 'card-header card-header-warning' : 'card-header card-header-danger') " (click) = "onClick()" style="height: 30vh">
+      
+        <ngx-charts-line-chart
+              [animations]="true"
+              [scheme]="colorScheme"
+              [results]="multi"
+              [gradient]="gradient"
+              [xAxis]="showXAxis"
+              [yAxis]="showYAxis"
+              [legend]="showLegend"
+              [showXAxisLabel]="showXAxisLabel"
+              [showYAxisLabel]="showYAxisLabel"
+              [xAxisLabel]="xAxisLabel"
+              [yAxisLabel]="yAxisLabel"
+              [yScaleMin]="graphmin"
+              [yScaleMax]="graphmax" ></ngx-charts-line-chart>
+      
+    </div>
+    <div class="card-body">
+      <h4 class="card-title">{{title}}</h4>
+      <p class="card-category">C</p>
+    </div>
+    <div class="card-footer">
+      <div class="stats">
+        <i class="material-icons">access_time</i> No warnings.
+      </div>
+    </div>
+  </div>

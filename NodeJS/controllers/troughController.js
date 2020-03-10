@@ -36,16 +36,17 @@ const createNewDate = (troughName, dateName, callback) =>{
        (err, doc)=>{
            if(!err) {
                if(doc.n == 0){
-                   createNewTrough(troughName,(resp)=>{
-                       Trough.update({name:troughName},
-                        {
-                            $push:{dataByDate: newDate}
-                        }, (err, doc)=>{
-                            if(!err) callback(doc);
-                            else callback(err);
-                        }
-                        );
-                   })
+                //    createNewTrough(troughName,(resp)=>{
+                //        Trough.update({name:troughName},
+                //         {
+                //             $push:{dataByDate: newDate}
+                //         }, (err, doc)=>{
+                //             if(!err) callback(doc);
+                //             else callback(err);
+                //         }
+                //         );
+                //    })
+                callback("Trough does not exist");
                }else{
                    callback(doc);
                }
@@ -104,17 +105,72 @@ const createNewDate = (troughName, dateName, callback) =>{
                                     ]
                                 }, (err, docs) =>{
                                     if(!err) callback(docs);
-                                    else callback("Error");
+                                    else callback("Error"+ err);
                                 });
                         });
                     }else callback(doc);
                 }
-                else callback("Error");
+                else callback("Error"+ err);
             }
         );
+
     }
 
+        const addData = (troughName, dateName, hourName, position, data, callback)=>{
+            if(position === "start"){
+                Trough.update({name:troughName},
+                    {$push:{
+                            'dataByDate.$[i].dataByHour.$[j].start':data
+                        }
+                    },
+                    {
+                        arrayFilters: [{
+                                'i.date':dateName
+                             },
+                             {
+                                 'j.hour': hourName
+                            }
+                        ]
+                    },
+                    (err, doc)=>{
+                        if(!err){
+                            if(doc.nModified == 0){
+                                createNewHour(troughName, dateName, hourName, (result)=>{
+                                    Trough.update({name:troughName},
+                                        {$push:{
+                                                'dataByDate.$[i].dataByHour.$[j].start':data
+                                            }
+                                        },
+                                        {
+                                            arrayFilters: [{
+                                                    "i.date": dateName  
+                                                },
+                                                {
+                                                    "j.hour": hourName
+                                                }
+                                            ]
+                                        },
+                                        (err, docs)=>{
+                                            if(!err) callback(docs);
+                                            else callback("Error"+err);
+                                        }
+                                    );
+                                });
+                            }else{
+                                callback(doc);
+                            }
+
+                        }else{
+                            callback("Error"+err);
+                        }
+                                      
+                    }
+                );
+            }
+        }
+    
 
 
 
-module.exports = { getAll, createNewTrough, createNewDate, createNewHour };
+
+module.exports = { createNewTrough, addData };

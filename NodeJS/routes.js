@@ -1,30 +1,18 @@
 const express = require('express');
 var router = express.Router();
 
-var dataController = require('./controllers/dataController.js');
+var troughController = require('./controllers/troughController.js');
 
 router.get('/', (req, res)=>{
-    dataController.getAll((result)=>{
+    troughController.getAll((result)=>{
         res.send(result);
     });
     
 });
 
-router.post('/newtrough', (req, res)=>{
-    dataController.createNewTrough(req.body.name, (result) =>{
-        res.send(result);
-    });
-    
-});
 
-router.post('/newdate', (req, res)=>{
-    dataController.createNewDate(req.body.trough, req.body.date, (result)=>{
-        res.send(result);
-    });
-});
-
-router.post('/newhour', (req, res)=>{
-    dataController.createNewHour(req.body.trough, req.body.date, req.body.hour, (result)=>{
+router.post('/newdata', (req, res)=>{
+    troughController.addData(req.body.trough, req.body.date, req.body.hour,"start",req.body.data, (result)=>{
         res.send(result);
     });
 });

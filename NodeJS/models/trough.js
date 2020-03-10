@@ -31,7 +31,7 @@ var DataByDateSchema = new mongoose.Schema({
 
 
 var Trough = mongoose.model('Trough', {
-    name: {type:String, unique : true, sparse: true, required : true, dropDups: true },
+    name: {type:String, unique : true, required : true, dropDups: true },
     dataByDate: [DataByDateSchema]
 });
 

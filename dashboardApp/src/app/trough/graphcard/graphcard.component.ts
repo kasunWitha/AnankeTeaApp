@@ -21,11 +21,11 @@ export class GraphcardComponent implements OnInit, OnChanges{
   single: any[];
   multi: any[] = [
     {
-      'name': 'Line',
+      'name': 'Top',
       'series': []
     },
     {
-      'name': 'Line2',
+      'name': 'Bottom',
       'series': []
     }
   ];

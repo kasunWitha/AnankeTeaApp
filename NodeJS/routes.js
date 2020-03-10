@@ -3,6 +3,7 @@ var router = express.Router();
 
 var troughController = require('./controllers/troughController.js');
 var deviceController = require('./controllers/deviceController');
+var settingController = require('./controllers/settingController');
 
 router.get('/', (req, res)=>{
     troughController.getAll((result)=>{
@@ -31,5 +32,12 @@ router.post('/newdata', (req, res)=>{
         res.send(result);
     });
 });
+
+router.post('/newsetting', (req, res)=>{
+    settingController.createNewSetting(req.body.trough, 50, 1, 7,3,1, (doc)=>{
+        res.send(doc);
+    });
+});
+
 
 module.exports = router;

@@ -173,4 +173,4 @@ const createNewDate = (troughName, dateName, callback) =>{
 
 
 
-module.exports = { createNewTrough, addData };
+module.exports = { createNewTrough, addData, getAll };

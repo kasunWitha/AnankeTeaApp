@@ -2,14 +2,18 @@ const mongoose = require('mongoose');
 
 var Setting = mongoose.model('Setting',{
     trough:{
-        type:  mongoose.Schema.Types.ObjectId,
-        ref: 'Trough'
+        type:  String,
+        unique: true,
+        required: true,
+        dropDups: true
     },
     criticalTemp:{type:Number},
 
     tempTimeout:{type:Number},
     
-    criticalBulbdiff:{type: Number},
+    criticalBulbdiffHigh:{type: Number},
+
+    criticalBulbdiffLow:{type: Number},
 
     bulbdiffTimeout:{type: Number}
 });

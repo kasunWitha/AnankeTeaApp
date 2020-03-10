@@ -1,16 +1,23 @@
 const deviceController = require('../controllers/deviceController');
 const troughController = require('../controllers/troughController');
+const alertHandler = require('./alertHandler');
+const broadcastHandler = require('./broadcastHandler');
+const calc = require('../calculations');
+
 var { Device } = require('../models/device');
 var { Trough } = require('../models/trough');
+
+
+
 
 const parseDeviceMessage = (message) =>{
     try{
         var jsonMsg = JSON.parse(message);
         var deviceName = Object.keys(jsonMsg)[0];
-
+        
         var tempArr = jsonMsg[deviceName].Temperature.replace(/\*C/g, "" ).replace().split(" ").map(Number);
         var humArr = jsonMsg[deviceName].Humidity.replace(/%/g, "" ).replace().split(" ").map(Number);
-
+        var bulbDifference = [calc.calculateBulbDiff(tempArr[0], humArr[0]), calc.calculateBulbDiff(tempArr[0], humArr[0])] ;
         deviceController.findByName(deviceName, (doc)=>{
             var device = new Device(doc);
             console.log(device.trough.name);
@@ -29,9 +36,18 @@ const parseDeviceMessage = (message) =>{
                     humidity:{
                         top: humArr[0],
                         bottom: humArr[1]
+                    },
+                    bulbDiff:{
+                        top: bulbDifference[0],
+                        bottom: bulbDifference[1]
                     }
                 }
             }
+
+            alerts = alertHandler.handleAlerts("trough1", 2, data);
+
+            broadcastHandler.broadcastMsg(device.trough.name, device.position, data, alerts);
+
 
             troughController.addData(device.trough.name, getDate(), getHour(), device.position, data, (res)=>{
                 console.log(res);

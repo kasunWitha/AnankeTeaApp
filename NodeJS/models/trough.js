@@ -13,7 +13,11 @@ var DataSchema = new mongoose.Schema({
         humidity:{
             top: {type : Number},
             bottom : {type: Number}
-        }
+        },
+        bulbDiff:{
+            top: {type : Number},
+            bottom : {type: Number}
+        },
     }
 });
 

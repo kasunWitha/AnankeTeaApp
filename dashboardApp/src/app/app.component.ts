@@ -22,10 +22,11 @@ export class AppComponent {
   constructor(private troughDataService: TroughDataService){
     troughDataService.messages.subscribe(msg => {
       try{
-       let data = JSON.stringify(msg);
-       this.dataArr = [data.substring(37,43).replace("%", "").replace("%", "").split(" "), data.substring(67,76).replace("*C", "").replace("*C", "").replace("\\", "").replace("\"","").split(" ")];
+      //  let data = JSON.stringify(msg);
+      //  this.dataArr = [data.substring(37,43).replace("%", "").replace("%", "").split(" "), data.substring(67,76).replace("*C", "").replace("*C", "").replace("\\", "").replace("\"","").split(" ")];
        // let msgObj = 
-        //console.log("response", this.dataArr);
+        console.log("response", msg);
+
         
 
       }catch(err){

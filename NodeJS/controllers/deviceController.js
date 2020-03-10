@@ -13,4 +13,13 @@ const createNewDevice= (deviceName, troughId, position, callback)=>{
     });
 }
 
-module.exports = { createNewDevice }
+const findByName = (deviceName, callback) =>{
+    Device.findOne({name: deviceName}).populate("trough").then((doc)=>{
+        if(!doc) callback("eRROR ;");
+        else callback(doc)
+    });
+}
+
+
+
+module.exports = { createNewDevice, findByName }

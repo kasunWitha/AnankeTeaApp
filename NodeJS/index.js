@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 
 const { mongoose } = require('./db.js');
+const wsClient = require('./websocket/wsClient');
 
 var routes = require('./routes.js');
 

@@ -52,7 +52,7 @@ export class TroughcardComponent implements OnInit, OnChanges {
       
     }else if(alerts.temperature.top.alertType==1 || alerts.temperature.bottom.alertType == 1 || alerts.bulbDiff.top.alertType==1 || alerts.bulbDiff.bottom.alertType == 1){
       this.alertStatus =  1;
-      this.playBuzz();
+     // this.playBuzz();
       //this.tempAlertText = "Alert! Temperature is above 50 degrees."
     }else{
       this.alertStatus = 0;

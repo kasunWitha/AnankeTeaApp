@@ -67,7 +67,7 @@
         </nav>
         <div class="content">
             <div class="container-fluid">
-                <app-home *ngIf="loadHome" [message] = "message"></app-home>
+                <app-home *ngIf="loadHome" [message] = "message" (troughClicked)="troughClickHandler($event)"></app-home>
                 <app-settings *ngIf="loadSettings"></app-settings>
                 <app-trough *ngIf="loadTrough" [dataArr] = "message" ></app-trough>
                 

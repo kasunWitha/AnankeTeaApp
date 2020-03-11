@@ -54,4 +54,8 @@ export class NavigationComponent implements OnInit {
     console.log(event);
   }
 
+  troughClickHandler(res: boolean){
+    this.onTrough1Click();
+  }
+
 }

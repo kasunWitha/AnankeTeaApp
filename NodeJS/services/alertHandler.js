@@ -31,21 +31,34 @@ const handleAlerts = (trough, position, data)=>{
         }
     };
     var troughSettings = settingsArr.filter(setting => setting.trough === trough)[0];
-    console.log("toptemp :", data.data.temperature.top );
+    console.log("bulbdiff :", data.data.bulbDiff.top );
+
     
 
     if(data.data.temperature.top > troughSettings.criticalTemp){
         console.log("Temperature top alert");
         alerts.temperature.top.alertType =1;
-        alerts.temperature.top.message = "Temperature of top higher than "+troughSettings.criticalTemp+" degrees";
+        console.log("alertTYpe", alerts.temperature.top.alertType =1);
+        alerts.temperature.top.message = "Alert: Temperature higher than "+troughSettings.criticalTemp+" degrees";
     }
 
     if(data.data.temperature.bottom > troughSettings.criticalTemp){
         console.log("Temperature bottom alert");
         alerts.temperature.bottom.alertType =1;
-        alerts.temperature.bottom.message = "Temperature of top higher than "+troughSettings.criticalTemp+" degrees";
+        alerts.temperature.bottom.message = "Alert: Temperature higher than "+troughSettings.criticalTemp+" degrees";
     }
-    if(data.data.temperature.bottom > troughSettings.criticalTemp){
+    console.log("cricial bd", troughSettings.criticalBubdiffHigh);
+    if(data.data.bulbDiff.top > 7){
+        console.log("bulbdiff top alert");
+        alerts.bulbDiff.top.alertType=1;
+        alerts.bulbDiff.top.message = "Alert! Bulb dcdddifference higher than 7";
+       // data.findAll();
+    }
+
+    if(data.data.bulbDiff.bottom > 7){
+        console.log("bulbdiff top alert");
+        alerts.bulbDiff.bottom.alertType=1;
+        alerts.bulbDiff.bottom.message = "Alert! Bulb difference higher than 7";
        // data.findAll();
     }
 

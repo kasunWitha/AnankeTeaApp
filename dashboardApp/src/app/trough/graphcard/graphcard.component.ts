@@ -12,9 +12,17 @@ export class GraphcardComponent implements OnInit, OnChanges{
   isWarningOn= false;
   lastTimestamp = Date.now();
 
-  @Input() dataArray: any;
+  @Input() flagg : boolean;
+  
+  @Input() topValue: Number;
+
+  @Input() bottomValue: Number;
 
   @Input() title: string;
+
+  @Input() alertStatus: Number = 0;
+
+  @Input() alertText: string = "No alerts."
 
   view: any[] = [null, 400];
 
@@ -74,10 +82,10 @@ export class GraphcardComponent implements OnInit, OnChanges{
   
   }
 
-  addGraphVals(vals:any){
+  addGraphVals(topVal, botVal){
 
-    var graph1Val = Number(vals[0]);
-    var graph2Val = Number(vals[1]);
+    var graph1Val = topVal;
+    var graph2Val = botVal;
     this.multi[0].series.push( {  'name': new Date(new Date().getTime() ),
                                     'value':graph1Val} );
     this.multi[1].series.push( {  'name': new Date(new Date().getTime() ),
@@ -88,13 +96,15 @@ export class GraphcardComponent implements OnInit, OnChanges{
 
       this.changeMaxMin(Math.max(graph1Val, graph2Val));
       this.changeMaxMin(Math.min(graph1Val, graph2Val));
-      this.toggleWarning(graph1Val);
-      this.changeCardStatus(graph1Val);
+      //this.toggleWarning(graph1Val);
+      //this.changeCardStatus(graph1Val);
   }
 
   ngOnChanges(changes:SimpleChanges){
-      console.log("changes:",changes.dataArray.currentValue);
-      this.addGraphVals(changes.dataArray.currentValue)
+
+      console.log("graphcard changes", this.topValue, this.bottomValue);
+    
+      this.addGraphVals(this.topValue, this.bottomValue);
   }
 
   changeMaxMin(newVal){
@@ -110,7 +120,7 @@ export class GraphcardComponent implements OnInit, OnChanges{
   }
 
   trimGraph(){
-    if(this.multi[0].series.length>12){
+    if(this.multi[0].series.length>3600){
       this.multi[0].series.shift();
       this.multi[1].series.shift();
     }
@@ -140,17 +150,7 @@ randValue() {
   return Math.random() * 2 +20;
 }
 
-changeCardStatus(val){
-  if(this.isWarningOn){
-    this.status = 2;
-  }else{
-    if(val>30){
-      this.status = 1;
-    }else{
-      this.status = 0;
-    }
-  }
-}
+
 
 toggleWarning(val){
   if(Number(val>30)){

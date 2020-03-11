@@ -17698,7 +17698,7 @@ html[dir="rtl"] .form-check .form-check-sign .check:before {
 
 .card .card-stats .author,
 .card .card-stats .stats {
-  display: inline-flex;
+  
 }
 
 .card {
@@ -19766,5 +19766,17 @@ div{
 .div-margin-top-bottom{
   margin-top: 20px;
   margin-bottom: 20px;
+}
+.div-grey{
+  padding: 10px;
+  color: #999999;
+  
+  
+}.div-margin{
+  margin:10px;
+  color: #999999;
+}
+.div-red{
+  color: red;
 }
 /*# sourceMappingURL=dashboard-free.css.map */

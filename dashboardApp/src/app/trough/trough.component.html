@@ -2,11 +2,26 @@
     <div class="col md-12">
       <div class="row">
         <div class="col-md-6">
-          <app-graphcard [dataArray] = "temp" [title] = "tempTitle"></app-graphcard>
+          <app-graphcard 
+          [topValue] = "topTemp" 
+          [bottomValue]= "bottomTemp" 
+          [title] = "tempTitle" 
+          [alertText] = "tempAlertText"
+          [alertStatus] = "tempAlertStatus"
+          [flagg] ="flag"
+          ></app-graphcard>
         </div>
         <div class="col-md-6">
           
-          <app-graphcard [dataArray] = "humidity" [title] = "humidTitle"></app-graphcard>
+          <app-graphcard 
+          [topValue] = "topHum" 
+          [bottomValue]= "bottomHum" 
+          [title] = "humidTitle"
+          [alertText] = "humAlertText"
+          [alertStatus] = "humAlertStatus"
+          [flagg] = "flag"
+          ></app-graphcard>
+          
         </div>
       </div>
       

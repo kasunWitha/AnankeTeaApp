@@ -1,0 +1,77 @@
+<div class="card card-stats">
+    <div [ngClass]=" alertStatus == 2? 'card-header card-header-danger card-header-icon' : (alertStatus == 1? 'card-header card-header-warning card-header-icon' : 'card-header card-header-success card-header-icon') ">
+      <div class="card-icon">
+        <i class="material-icons">spa</i>
+      </div>
+      <p class="card-category"></p>
+      <h3 class="card-title">{{title}}</h3>
+    </div>
+    <div class="card-body">
+      <div class="div-margin"> 
+        <div class="row">
+            <h5 style="float: left;">Top</h5>
+        </div>
+        
+        <div class = "row">
+            
+            <div class="col">
+                <div class = "row" style="text-align: left;">
+                    <i class="material-icons">opacity</i>
+                    <h5>{{topTemp}}C</h5>
+                </div>
+            </div>
+            <div class="col">
+                <div class="row" style="text-align: center;">   
+                    <i class="material-icons">opacity</i>
+                    <h5>{{topHum}}%</h5>
+                </div>
+            </div>
+            <div class="col">
+                <div class="row" style="text-align: right;">   
+                    <i class="material-icons">opacity</i>
+                    <h5>{{topBulbdiff}}</h5>
+                </div>
+            </div>
+        </div>
+      </div>
+
+      <div class="div-margin"> 
+        <div class="row">
+            <h5 style="float: left;">Bottom</h5>
+        </div>
+        
+        <div class = "row">
+            
+            <div class="col">
+                <div class = "row" style="text-align: left;">
+                    <i class="material-icons">opacity</i>
+                    <h5>{{bottomTemp}}C</h5>
+                </div>
+            </div>
+            <div class="col">
+                <div class="row" style="text-align: center;">   
+                    <i class="material-icons">opacity</i>
+                    <h5>{{bottomHum}}%</h5>
+                </div>
+            </div>
+            <div class="col">
+                <div class="row" style="text-align: right;">   
+                    <i class="material-icons">opacity</i>
+                    <h5>{{bottomBulbdiff}}</h5>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+
+    
+    
+
+    
+
+    
+
+
+
+    
+  </div>

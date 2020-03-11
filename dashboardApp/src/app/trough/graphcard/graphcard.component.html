@@ -1,5 +1,5 @@
 <div class="card card-chart">
-    <div [ngClass]=" status == 0? 'card-header card-header-success' : (status == 1? 'card-header card-header-warning' : 'card-header card-header-danger') " (click) = "onClick()" style="height: 30vh">
+    <div [ngClass]=" alertStatus == 2? 'card-header card-header-danger' : (alertStatus == 1? 'card-header card-header-warning' : 'card-header card-header-success') " (click) = "onClick()" style="height: 30vh">
       
         <ngx-charts-line-chart
               [animations]="true"
@@ -23,7 +23,7 @@
     </div>
     <div class="card-footer">
       <div class="stats">
-        <i class="material-icons">access_time</i> <h4><font color="brown">Alert: Wet and dry bulb differnece above 7.</font></h4>
+        <i class="material-icons">access_time</i> <h4><font color="gray">{{alertText}}</font></h4>
       </div>
     </div>
   </div>

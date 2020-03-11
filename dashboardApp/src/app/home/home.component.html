@@ -2,71 +2,31 @@
 
 
   <!-- End Navbar -->
- 
+  <h4>Trough 1</h4>
       <div class="row">
+        
         <div class="col-lg-4 col-md-9 col-sm-9">
           <a href="javascript:void(0)" (click) = "onTrough1Click()">
-            <div class="card card-stats">
-              <div class="card-header card-header-success card-header-icon">
-                <div class="card-icon">
-                  <i class="material-icons">spa</i>
-                </div>
-                
-              
-                <h3 class="card-title">Trough 1</h3>
-              
-                  <p class="card-category">Healthy</p>
-              
-                <div class="div-margin-top-bottom">
+              <app-troughcard [title] = "'Sensor Pole 1'" [data] = "message"></app-troughcard>
+            </a>
+        </div>
 
-                </div>
-              </div>
-            </div>
+        <div class="col-lg-4 col-md-9 col-sm-9">
+          <a href="javascript:void(0)" (click) = "onTrough1Click()">
+              <app-troughcard [title] = "'Sensor Pole 2'"></app-troughcard>
+            </a>
+        </div>
+
+        <div class="col-lg-4 col-md-9 col-sm-9">
+          <a href="javascript:void(0)" (click) = "onTrough1Click()">
+              <app-troughcard [title] = "'Sensor Pole 3'"></app-troughcard>
             </a>
         </div>
       
 
-        <div class="col-lg-4 col-md-9 col-sm-9">
-          <a href="./trough2.html">
-            <div class="card card-stats">
-              <div class="card-header card-header-icon">
-                <div class="card-icon">
-                  <i class="material-icons">spa</i>
-                </div>
-                
-              
-                <h3 class="card-title">Trough 2</h3>
-              
-                  <p class="card-category">Inactive</p>
-              
-                <div class="div-margin-top-bottom">
+       
 
-                </div>
-              </div>
-            </div>
-            </a>
-        </div>
-
-        <div class="col-lg-4 col-md-9 col-sm-9">
-          <a href="./trough3.html">
-            <div class="card card-stats">
-              <div class="card-header card-header-danger card-header-icon">
-                <div class="card-icon">
-                  <i class="material-icons">spa</i>
-                </div>
-                
-              
-                <h3 class="card-title">Trough 3</h3>
-              
-                  <p class="card-category">1 alert</p>
-              
-                <div class="div-margin-top-bottom">
-
-                </div>
-              </div>
-            </div>
-            </a>
-        </div>
+        
         
                     
       </div>

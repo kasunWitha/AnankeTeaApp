@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import {Message } from '../trough-data.service'
 
 @Component({
   selector: 'app-navigation',
@@ -7,7 +8,12 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class NavigationComponent implements OnInit {
 
-  @Input() dataArr: any = [["0", "0"],["0", "0"]];
+  @Input() message: Message = {
+    trough: null,
+    position: null,
+    data:null,
+    alerts:null
+  };
 
   loadHome: boolean;
   loadSettings: boolean;

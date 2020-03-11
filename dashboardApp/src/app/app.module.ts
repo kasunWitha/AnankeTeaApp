@@ -11,6 +11,7 @@ import { SettingsComponent } from './settings/settings.component';
 import { TroughComponent } from './trough/trough.component';
 import { GraphcardComponent } from './trough/graphcard/graphcard.component';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { TroughcardComponent } from './home/troughcard/troughcard.component';
 
 
 
@@ -22,6 +23,7 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
     SettingsComponent,
     TroughComponent,
     GraphcardComponent,
+    TroughcardComponent,
 
   ],
   imports: [

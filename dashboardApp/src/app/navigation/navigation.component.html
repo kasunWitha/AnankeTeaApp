@@ -67,9 +67,9 @@
         </nav>
         <div class="content">
             <div class="container-fluid">
-                <app-home *ngIf="loadHome"></app-home>
+                <app-home *ngIf="loadHome" [message] = "message"></app-home>
                 <app-settings *ngIf="loadSettings"></app-settings>
-                <app-trough *ngIf="loadTrough" [dataArr] = "dataArr"></app-trough>
+                <app-trough *ngIf="loadTrough" [dataArr] = "message" ></app-trough>
                 
             </div>
         </div>

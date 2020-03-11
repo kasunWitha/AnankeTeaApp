@@ -66,14 +66,14 @@ export class TroughcardComponent implements OnInit, OnChanges {
 
   playBell(){
     let audio = new Audio();
-    audio.src = '../../../assets/sound/bell.mp3';
+    audio.src = '../../assets/sound/bell.mp3';
     audio.load();
     audio.play();
   }
 
   playBuzz(){
     let audio = new Audio();
-    audio.src = '../../../assets/sound/buzz.mp3';
+    audio.src = '../../assets/sound/buzz.mp3';
     audio.load();
     audio.play();
   }

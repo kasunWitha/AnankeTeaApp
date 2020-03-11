@@ -120,7 +120,7 @@ export class GraphcardComponent implements OnInit, OnChanges{
   }
 
   trimGraph(){
-    if(this.multi[0].series.length>3600){
+    if(this.multi[0].series.length>40){
       this.multi[0].series.shift();
       this.multi[1].series.shift();
     }

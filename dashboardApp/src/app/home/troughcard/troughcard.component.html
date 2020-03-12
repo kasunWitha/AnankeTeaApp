@@ -15,8 +15,8 @@
         <div class = "row">
             
             <div class="col">
-                <div class = "row" style="text-align: left;">
-                    <i class="material-icons">opacity</i>
+                <div [ngClass]=" topTempAlertStat == 2? 'row row-red':(topTempAlertStat==1? 'row row-yellow' : 'row')" style="text-align: left;">
+                    <i class="material-icons">wb_sunny</i>
                     <h5>{{topTemp}}C</h5>
                 </div>
             </div>
@@ -27,8 +27,8 @@
                 </div>
             </div>
             <div class="col">
-                <div class="row" style="text-align: right;">   
-                    <i class="material-icons">opacity</i>
+                <div [ngClass]=" topBulbdiffAlertStat == 2? 'row row-red':(topBulbdiffAlertStat==1? 'row row-yellow' : 'row')" style="text-align: right;">   
+                    <i class="material-icons">wb_incandescent</i>
                     <h5>{{topBulbdiff}}</h5>
                 </div>
             </div>
@@ -43,8 +43,8 @@
         <div class = "row">
             
             <div class="col">
-                <div class = "row" style="text-align: left;">
-                    <i class="material-icons">opacity</i>
+                <div [ngClass]=" bottomTempAlertStat == 2? 'row row-red':(bottomTempAlertStat==1? 'row row-yellow' : 'row')" style="text-align: left;">
+                    <i class="material-icons">wb_sunny</i>
                     <h5>{{bottomTemp}}C</h5>
                 </div>
             </div>
@@ -55,8 +55,8 @@
                 </div>
             </div>
             <div class="col">
-                <div class="row" style="text-align: right;">   
-                    <i class="material-icons">opacity</i>
+                <div [ngClass]=" bottomBulbdiffAlertStat == 2? 'row row-red':(bottomBulbdiffAlertStat==1? 'row row-yellow' : 'row')" style="text-align: right;">   
+                    <i class="material-icons">wb_incandescent</i>
                     <h5>{{bottomBulbdiff}}</h5>
                 </div>
             </div>

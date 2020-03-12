@@ -16,6 +16,9 @@ export class HomeComponent implements OnInit, OnChanges {
     alerts:null
   };
 
+  sp1Msg:Message;
+  sp2Msg:Message;
+
 
   @Output() troughClicked : EventEmitter<boolean> = new EventEmitter();
 
@@ -27,8 +30,15 @@ export class HomeComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(changes:SimpleChanges){
-    console.log("xxzzxzxz:",changes.message.currentValue);
-   
+    try{
+      if(this.message.position ==="start"){
+        this.sp1Msg=changes.message.currentValue;
+      }else if(this.message.position ==="middle"){
+        this.sp2Msg=changes.message.currentValue;
+      }
+    }catch(err){
+
+    }
     //this.addGraphVals()
 }
 
@@ -36,6 +46,10 @@ export class HomeComponent implements OnInit, OnChanges {
 
   onTrough1Click(){
     this.troughClicked.emit(true);
+  }
+
+  onTrough2Click(){
+    this.troughClicked.emit(false);
   }
 
 }

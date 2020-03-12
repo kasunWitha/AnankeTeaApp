@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input ,OnChanges, SimpleChanges} from '@angular/core';
 import {Message } from '../trough-data.service'
 
 @Component({
@@ -6,7 +6,7 @@ import {Message } from '../trough-data.service'
   templateUrl: './navigation.component.html',
   styleUrls: ['./navigation.component.css']
 })
-export class NavigationComponent implements OnInit {
+export class NavigationComponent implements OnInit,OnChanges {
 
   @Input() message: Message = {
     trough: null,
@@ -18,6 +18,9 @@ export class NavigationComponent implements OnInit {
   loadHome: boolean;
   loadSettings: boolean;
   loadTrough:boolean;
+  loadTrough2:boolean;
+
+  brand = "Home"
 
   
 
@@ -29,24 +32,76 @@ export class NavigationComponent implements OnInit {
     this.loadHome = true;
     this.loadSettings = false;
     this.loadTrough = false;
+    this.loadTrough2 = false;
+  }
+
+  ngOnChanges(changes:SimpleChanges){
+    this.handleAlerts(changes.message.currentValue.alerts)
+  }
+
+  handleAlerts(alerts){
+    if(alerts.temperature.top.alertType==2 || alerts.temperature.bottom.alertType == 2 || alerts.bulbDiff.top.alertType==2 || alerts.bulbDiff.bottom.alertType == 2){
+      this.playBuzz();
+      
+    }else if(alerts.temperature.top.alertType==1 || alerts.temperature.bottom.alertType == 1 || alerts.bulbDiff.top.alertType==1 || alerts.bulbDiff.bottom.alertType == 1){
+      this.playBell();
+     // this.playBuzz();
+      //this.tempAlertText = "Alert! Temperature is above 50 degrees."
+    }
+  }
+
+  playBell(){
+    try{
+    let audio = new Audio();
+    audio.src = '../assets/sound/bell.mp3';
+    audio.load();
+    audio.play();
+    }catch(err){
+      console.log(err);
+    }
+  }
+
+  playBuzz(){
+    try{
+    let audio = new Audio();
+    audio.src = '../assets/sound/buzz.mp3';
+    audio.load();
+    audio.play();
+    }catch(err){
+      console.log(err);
+    }
   }
 
   onSettingsClick(){
     this.loadHome =false;
     this.loadSettings = true;
     this. loadTrough = false;
+    this.loadTrough2 = false;
   }
 
   onHomeClick(){
     this.loadHome =true;
     this.loadSettings = false;
     this.loadTrough = false;
+    this.loadTrough2 = false;
+    this.brand ="Home"
   }
 
   onTrough1Click(){
     this.loadHome =false;
     this.loadSettings = false;
     this.loadTrough = true;
+    this.loadTrough2 = false;
+    this.brand="Trough 1"
+    
+  }
+
+  onTrough2Click(){
+    this.loadHome =false;
+    this.loadSettings = false;
+    this.loadTrough = false;
+    this.loadTrough2 = true;
+    this.brand="Trough 2"
     
   }
 
@@ -55,7 +110,9 @@ export class NavigationComponent implements OnInit {
   }
 
   troughClickHandler(res: boolean){
+    if(res)
     this.onTrough1Click();
+    else this.onTrough2Click();
   }
 
 }

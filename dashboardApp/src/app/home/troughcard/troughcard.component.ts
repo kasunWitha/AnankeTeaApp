@@ -19,6 +19,12 @@ export class TroughcardComponent implements OnInit, OnChanges {
   bottomHum = 0;
   bottomBulbdiff = 0.0;
 
+  topBulbdiffAlertStat = 0;
+  bottomBulbdiffAlertStat = 0;
+
+  topTempAlertStat = 0;
+  bottomTempAlertStat = 0;
+
   alertStatus = 0;
 
   @Input() data: Message = {
@@ -34,6 +40,7 @@ export class TroughcardComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(changes:SimpleChanges){
+    try{
     this.topTemp = changes.data.currentValue.data.data.temperature.top;
     this.bottomTemp = changes.data.currentValue.data.data.temperature.bottom;
     this.topHum = changes.data.currentValue.data.data.humidity.top;
@@ -42,7 +49,9 @@ export class TroughcardComponent implements OnInit, OnChanges {
     this.bottomBulbdiff = changes.data.currentValue.data.data.bulbDiff.bottom; 
 
     this.handleAlerts(changes.data.currentValue.alerts);
-   
+    }catch(err){
+      console.log(err);
+    }
     //this.addGraphVals()
   }
 
@@ -58,6 +67,13 @@ export class TroughcardComponent implements OnInit, OnChanges {
       this.alertStatus = 0;
       //this.tempAlertText = "No alerts";
     }
+
+    this.topTempAlertStat=alerts.temperature.top.alertType;
+    this.bottomTempAlertStat=alerts.temperature.bottom.alertType;
+
+    this.topBulbdiffAlertStat = alerts.bulbDiff.top.alertType;
+    this.bottomBulbdiffAlertStat = alerts.bulbDiff.bottom.alertType;
+    
   
     
     

@@ -53,11 +53,11 @@ export class GraphcardComponent implements OnInit, OnChanges{
 
   count = 0;
 
-  maxVal = 0;
-  minVal = 200;
+  @Input() maxVal = 90;
+  @Input() minVal = 20;
 
-  graphmin = 5;
-  graphmax = 60;
+  graphmin = this.minVal-5;
+  graphmax = this.maxVal+5;
 
  // interval;
 
@@ -101,20 +101,26 @@ export class GraphcardComponent implements OnInit, OnChanges{
   }
 
   ngOnChanges(changes:SimpleChanges){
+    try{
 
       console.log("graphcard changes", this.topValue, this.bottomValue);
     
       this.addGraphVals(this.topValue, this.bottomValue);
+    }catch(err){
+      console.log(err);
+    }
   }
 
   changeMaxMin(newVal){
     if(newVal[0]>this.maxVal){
       this.maxVal = newVal;
+      this.graphmax = this.maxVal+5;
       //this.graphmax = newVal+10
     }
 
     if(newVal<this.minVal){
       this.minVal = newVal;
+      this.graphmin = this.minVal-5;
      // this.graphmin = newVal - 5;
     }
   }

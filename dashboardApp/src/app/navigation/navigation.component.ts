@@ -8,7 +8,7 @@ import {Message } from '../trough-data.service'
 })
 export class NavigationComponent implements OnInit,OnChanges {
 
-  @ViewChild('audioOption', {static: false}) audioPlayerRef: ElementRef;
+  //@ViewChild('audioOption', {static: false}) audioPlayerRef: ElementRef;
 
 
   @Input() message: Message = {
@@ -55,11 +55,11 @@ export class NavigationComponent implements OnInit,OnChanges {
 
   playBell(){
     try{
-    // let audio = new Audio();
-    // audio.src = '../assets/sound/bell.mp3';
-    // audio.load();
-    // audio.play();
-      this.audioPlayerRef.nativeElement.play();
+    let audio = new Audio();
+    audio.src = 'assets/sound/bell.mp3';
+    audio.load();
+    audio.play();
+      //this.audioPlayerRef.nativeElement.play();
     }catch(err){
       console.log(err);
     }

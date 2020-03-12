@@ -5,6 +5,8 @@ settingController.findAll((docs)=>{
     settingsArr=docs;
 });
 
+
+
 const handleAlerts = (trough, position, data)=>{
 
     var alerts = {

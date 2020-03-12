@@ -166,6 +166,55 @@ const createNewDate = (troughName, dateName, callback) =>{
                                       
                     }
                 );
+            }else if(position === "middle"){
+                Trough.update({name:troughName},
+                    {$push:{
+                            'dataByDate.$[i].dataByHour.$[j].middle':data
+                        }
+                    },
+                    {
+                        arrayFilters: [{
+                                'i.date':dateName
+                             },
+                             {
+                                 'j.hour': hourName
+                            }
+                        ]
+                    },
+                    (err, doc)=>{
+                        if(!err){
+                            if(doc.nModified == 0){
+                                createNewHour(troughName, dateName, hourName, (result)=>{
+                                    Trough.update({name:troughName},
+                                        {$push:{
+                                                'dataByDate.$[i].dataByHour.$[j].start':data
+                                            }
+                                        },
+                                        {
+                                            arrayFilters: [{
+                                                    "i.date": dateName  
+                                                },
+                                                {
+                                                    "j.hour": hourName
+                                                }
+                                            ]
+                                        },
+                                        (err, docs)=>{
+                                            if(!err) callback(docs);
+                                            else callback("Error"+err);
+                                        }
+                                    );
+                                });
+                            }else{
+                                callback(doc);
+                            }
+
+                        }else{
+                            callback("Error"+err);
+                        }
+                                      
+                    }
+                );
             }
         }
     

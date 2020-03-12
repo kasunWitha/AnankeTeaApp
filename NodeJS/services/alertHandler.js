@@ -55,6 +55,9 @@ const handleAlerts = (trough, position, data)=>{
         alerts.bulbDiff.top.alertType=1;
         alerts.bulbDiff.top.message = "Alert! Bulb dcdddifference higher than 7";
        // data.findAll();
+    }else if(data.data.bulbDiff.top<3){
+        alerts.bulbDiff.top.alertType=1;
+        alerts.bulbDiff.top.message = "Alert! Bulb dcdddifference hi";
     }
 
     if(data.data.bulbDiff.bottom > 7){

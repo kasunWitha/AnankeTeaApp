@@ -1,4 +1,4 @@
-import { Component, OnInit, Input ,OnChanges, SimpleChanges} from '@angular/core';
+import { Component, OnInit, Input ,OnChanges, SimpleChanges, ViewChild, ElementRef} from '@angular/core';
 import {Message } from '../trough-data.service'
 
 @Component({
@@ -7,6 +7,9 @@ import {Message } from '../trough-data.service'
   styleUrls: ['./navigation.component.css']
 })
 export class NavigationComponent implements OnInit,OnChanges {
+
+  @ViewChild('audioOption', {static: false}) audioPlayerRef: ElementRef;
+
 
   @Input() message: Message = {
     trough: null,
@@ -52,10 +55,11 @@ export class NavigationComponent implements OnInit,OnChanges {
 
   playBell(){
     try{
-    let audio = new Audio();
-    audio.src = '../assets/sound/bell.mp3';
-    audio.load();
-    audio.play();
+    // let audio = new Audio();
+    // audio.src = '../assets/sound/bell.mp3';
+    // audio.load();
+    // audio.play();
+      this.audioPlayerRef.nativeElement.play();
     }catch(err){
       console.log(err);
     }

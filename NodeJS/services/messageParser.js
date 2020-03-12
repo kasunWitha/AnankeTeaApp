@@ -17,7 +17,7 @@ const parseDeviceMessage = (message) =>{
         
         var tempArr = jsonMsg[deviceName].Temperature.replace(/\*C/g, "" ).replace().split(" ").map(Number);
         var humArr = jsonMsg[deviceName].Humidity.replace(/%/g, "" ).replace().split(" ").map(Number);
-        var bulbDifference = [calc.calculateBulbDiff(tempArr[0], humArr[0]), calc.calculateBulbDiff(tempArr[0], humArr[0])] ;
+        var bulbDifference = [calc.calculateBulbDiff(tempArr[0], humArr[0]), calc.calculateBulbDiff(tempArr[1], humArr[1])] ;
         deviceController.findByName(deviceName, (doc)=>{
             var device = new Device(doc);
             console.log(device.trough.name);

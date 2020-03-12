@@ -68,7 +68,7 @@ export class NavigationComponent implements OnInit,OnChanges {
   playBuzz(){
     try{
     let audio = new Audio();
-    audio.src = '../assets/sound/buzz.mp3';
+    audio.src = 'assets/sound/buzz.mp3';
     audio.load();
     audio.play();
     }catch(err){

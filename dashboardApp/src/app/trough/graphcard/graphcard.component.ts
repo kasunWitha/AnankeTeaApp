@@ -96,8 +96,8 @@ export class GraphcardComponent implements OnInit, OnChanges{
       this.multi = [...this.multi];
       this.trimGraph();
 
-      this.changeMaxMin(Math.max(graph1Val, graph2Val));
-      this.changeMaxMin(Math.min(graph1Val, graph2Val));
+      this.changeMaxMin(this.multi[0].series, this.multi[1].series);
+      //this.changeMaxMin(Math.min(graph1Val, graph2Val));
       //this.toggleWarning(graph1Val);
       //this.changeCardStatus(graph1Val);
   }
@@ -113,18 +113,9 @@ export class GraphcardComponent implements OnInit, OnChanges{
     }
   }
 
-  changeMaxMin(newVal){
-    if(newVal[0]>this.maxVal){
-      this.maxVal = newVal;
-      this.graphmax = this.maxVal+5;
-      //this.graphmax = newVal+10
-    }
-
-    if(newVal<this.minVal){
-      this.minVal = newVal;
-      this.graphmin = this.minVal-5;
-     // this.graphmin = newVal - 5;
-    }
+  changeMaxMin(array1, array2){
+   this.maxVal = Math.max(Math.max.apply(Math,array1.map(function(o){return o.value})), Math.max.apply(Math,array2.map(function(o){return o.value})), 10)+1;
+   this.minVal = Math.min(Math.min.apply(Math,array1.map(function(o){return o.value})), Math.min.apply(Math,array2.map(function(o){return o.value})), 10)-1;
   }
 
   trimGraph(){

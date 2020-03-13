@@ -3,7 +3,7 @@ import { Observable, Subject } from "rxjs";
 import { map } from 'rxjs/operators';
 import { WebsocketService } from "./websocket.service";
 
-const CHAT_URL = "ws://13.235.245.112:3000";
+const CHAT_URL = "ws://15.206.145.171:3000";
 
 export interface Message {
   trough: string,

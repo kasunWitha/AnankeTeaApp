@@ -12,11 +12,19 @@ var { Trough } = require('../models/trough');
 
 const parseDeviceMessage = (message) =>{
     try{
-        var jsonMsg = JSON.parse(message);
-        var deviceName = Object.keys(jsonMsg)[0];
+        try{
+            var jsonMsg = JSON.parse(message);
+            var deviceName = Object.keys(jsonMsg)[0];
+            
+            var tempArr = jsonMsg[deviceName].Temperature.replace(/\*C/g, "" ).replace().split(" ").map(Number);
+            var humArr = jsonMsg[deviceName].Humidity.replace(/%/g, "" ).replace().split(" ").map(Number);
+        }catch(err){
+            var inArr = parseNoJSONDeviceMsg(message);
+            var tempArr = inArr[1];
+            var humArr = inArr[0]
+            var deviceName = "ANANKENODE001";
+        }
         
-        var tempArr = jsonMsg[deviceName].Temperature.replace(/\*C/g, "" ).replace().split(" ").map(Number);
-        var humArr = jsonMsg[deviceName].Humidity.replace(/%/g, "" ).replace().split(" ").map(Number);
         var bulbDifference = [calc.calculateBulbDiff(tempArr[0], humArr[0]), calc.calculateBulbDiff(tempArr[1], humArr[1])] ;
         deviceController.findByName(deviceName, (doc)=>{
             var device = new Device(doc);
@@ -55,6 +63,7 @@ const parseDeviceMessage = (message) =>{
         });
     }catch(err){
         console.log(err);
+        
     }
 }
 
@@ -67,6 +76,32 @@ const getDate = ()=>{
 const getHour = ()=>{
     timestamp = new Date();
     return timestamp.getHours();
+}
+
+
+const parseNoJSONDeviceMsg=(message)=>{
+    try{
+
+        var editedMsg = message.replace(/{ANANKETEANODE001:/g, "").replace(/}/g, "").replace("[", "").replace("]", "")
+        var arr = editedMsg.split(",");
+        var humArray = arr[0].replace("Humidity:", "").replace(/%/g, "").replace(/\t/g, "").trim().split(" ");
+        var tempArray = arr[1].replace("Temperature :", "").replace(/\*C/g, "").replace(/\t/g, "").trim().split(" ");
+        console.log("Array", arr, tempArray, humArray);
+        var outArr = [humArray.map(Number), tempArray.map(Number)];
+        
+    }catch (err){
+        console.log(err);
+        var outArr = [[0,0], [0,0]];
+
+    }
+
+    return outArr;
+
+   // var humArray = arr[0].replace("Humidity:", "").replace(/%/g, "").replace(/\t/g, "").trim().split(" ");
+    //var tempArray = arr[1].replace("Temperature:", "").replace(/\*C/g, "").replace(/\t/g, "").trim().split(" ");
+    
+
+    
 }
 
 

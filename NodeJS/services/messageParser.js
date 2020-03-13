@@ -21,8 +21,9 @@ const parseDeviceMessage = (message) =>{
         }catch(err){
             var inArr = parseNoJSONDeviceMsg(message);
             var tempArr = inArr[1];
-            var humArr = inArr[0]
+            var humArr = inArr[0];
             var deviceName = "ANANKENODE001";
+            console.log("real data");
         }
         
         var bulbDifference = [calc.calculateBulbDiff(tempArr[0], humArr[0]), calc.calculateBulbDiff(tempArr[1], humArr[1])] ;

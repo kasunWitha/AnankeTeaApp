@@ -25,9 +25,10 @@ const parseDeviceMessage = (message) =>{
             var deviceName = "ANANKENODE001";
             console.log("real data");
         }
-        
+        console.log("calc difference");
         var bulbDifference = [calc.calculateBulbDiff(tempArr[0], humArr[0]), calc.calculateBulbDiff(tempArr[1], humArr[1])] ;
         deviceController.findByName(deviceName, (doc)=>{
+            console.log('deviceFound');
             var device = new Device(doc);
             console.log(device.trough.name);
             console.log(getDate());
@@ -56,13 +57,14 @@ const parseDeviceMessage = (message) =>{
             alerts = alertHandler.handleAlerts("trough1", 2, data);
 
             broadcastHandler.broadcastMsg(device.trough.name, device.position, data, alerts);
-
+            console.log("MessAGE BROADCASTED");
 
             troughController.addData(device.trough.name, getDate(), getHour(), device.position, data, (res)=>{
                 console.log(res);
             });
         });
     }catch(err){
+        console.log("Inerr");
         console.log(err);
         
     }

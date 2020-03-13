@@ -117,6 +117,7 @@ const createNewDate = (troughName, dateName, callback) =>{
     }
 
         const addData = (troughName, dateName, hourName, position, data, callback)=>{
+            console.log("In addData");
             if(position === "start"){
                 Trough.update({name:troughName},
                     {$push:{

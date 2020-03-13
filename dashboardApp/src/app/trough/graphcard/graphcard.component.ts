@@ -22,7 +22,9 @@ export class GraphcardComponent implements OnInit, OnChanges{
 
   @Input() alertStatus: Number = 0;
 
-  @Input() alertText: string = "No alerts."
+  @Input() alertTextTop: string = "Top: No alerts."
+
+  @Input() alertTextBottom: string = "Bottom: No alerts."
 
   view: any[] = [null, 400];
 

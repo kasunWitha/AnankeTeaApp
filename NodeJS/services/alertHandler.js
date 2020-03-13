@@ -53,11 +53,11 @@ const handleAlerts = (trough, position, data)=>{
     if(data.data.bulbDiff.top > 7){
         console.log("bulbdiff top alert");
         alerts.bulbDiff.top.alertType=1;
-        alerts.bulbDiff.top.message = "Alert! Bulb dcdddifference higher than 7";
+        alerts.bulbDiff.top.message = "Alert! Bulb difference higher than 7";
        // data.findAll();
     }else if(data.data.bulbDiff.top<3){
         alerts.bulbDiff.top.alertType=1;
-        alerts.bulbDiff.top.message = "Alert! Bulb dcdddifference hi";
+        alerts.bulbDiff.top.message = "Alert! Bulb ddifference lower than 3";
     }
 
     if(data.data.bulbDiff.bottom > 7){
@@ -65,7 +65,12 @@ const handleAlerts = (trough, position, data)=>{
         alerts.bulbDiff.bottom.alertType=1;
         alerts.bulbDiff.bottom.message = "Alert! Bulb difference higher than 7";
        // data.findAll();
+    }else if(data.data.bulbDiff.bottom <3){
+        alerts.bulbDiff.bottom.alertType=1;
+        alerts.bulbDiff.bottom.message = "Alert! Bulb difference lower than 3";
     }
+
+    
 
     return alerts;
     

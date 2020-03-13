@@ -40,13 +40,17 @@ export class TroughComponent implements OnInit, OnChanges {
 
   tempAlertStatus = 1;
   humAlertStatus = 0;
-  tempAlertText = "No alerts";
-  humAlertText = "No alerts";
+  tempAlertTextTop = "Top:   No alerts";
+  tempAlertTextBottom = "Bottom:   No alerts";
+  humAlertTextTop = "Top:   No alerts";
+  humAlertTextBottom = "Bottom: No alerts";
 
   tempAlertStatus2 = 1;
   humAlertStatus2 = 0;
-  tempAlertText2 = "No alerts";
-  humAlertText2 = "No alerts";
+  tempAlertTextTop2 = "Top:   No alerts";
+  tempAlertTextBottom2 = "Bottom:   No alerts";
+  humAlertTextTop2 = "Top:   No alerts";
+  humAlertTextBottom2 = "Bottom: No alerts";
 
 
   constructor() { }
@@ -92,25 +96,26 @@ export class TroughComponent implements OnInit, OnChanges {
 handleAlerts(alerts){
   if(alerts.temperature.top.alertType==2 || alerts.temperature.bottom.alertType == 2){
     this.tempAlertStatus = 2;
-    this.tempAlertText = "Warning! Temperature has beem above 50 degrees for more than 1 minute."
   }else if(alerts.temperature.top.alertType==1 || alerts.temperature.bottom.alertType == 1){
     this.tempAlertStatus =  1;
-    this.tempAlertText = "Alert! Temperature is above 50 degrees."
   }else{
     this.tempAlertStatus = 0;
-    this.tempAlertText = "No alerts";
+  
   }
 
   if(alerts.bulbDiff.top.alertType==2 || alerts.bulbDiff.bottom.alertType == 2){
     this.humAlertStatus = 2;
-    this.humAlertText = "Warning! Bulb difference has been above 7 for more than 1 minute."
   }else if(alerts.bulbDiff.top.alertType==1 || alerts.bulbDiff.bottom.alertType == 1){
     this.humAlertStatus =  1;
-    this.humAlertText = "Alert! Bulb difference above 7."
   }else{
     this.humAlertStatus = 0;
-    this.humAlertText = "No alerts";
   }
+
+  this.tempAlertTextTop = alerts.temperature.top.message;
+  this.tempAlertTextBottom = alerts.temperature.bottom.message;
+
+  this.humAlertTextTop = alerts.bulbDiff.top.message;
+  this.humAlertTextBottom = alerts.bulbDiff.bottom.message;
   
 }
 
@@ -118,25 +123,27 @@ handleAlerts(alerts){
 handleAlerts2(alerts){
   if(alerts.temperature.top.alertType==2 || alerts.temperature.bottom.alertType == 2){
     this.tempAlertStatus2 = 2;
-    this.tempAlertText2 = "Warning! Temperature has beem above 50 degrees for more than 1 minute."
   }else if(alerts.temperature.top.alertType==1 || alerts.temperature.bottom.alertType == 1){
     this.tempAlertStatus2 =  1;
-    this.tempAlertText2 = "Alert! Temperature is above 50 degrees."
   }else{
     this.tempAlertStatus2 = 0;
-    this.tempAlertText2 = "No alerts";
   }
 
   if(alerts.bulbDiff.top.alertType==2 || alerts.bulbDiff.bottom.alertType == 2){
     this.humAlertStatus2 = 2;
-    this.humAlertText2 = "Warning! Bulb difference has been above 7 for more than 1 minute."
   }else if(alerts.bulbDiff.top.alertType==1 || alerts.bulbDiff.bottom.alertType == 1){
     this.humAlertStatus2 =  1;
-    this.humAlertText2 = "Alert! Bulb difference above 7."
   }else{
     this.humAlertStatus2 = 0;
-    this.humAlertText2 = "No alerts";
+  
   }
+
+  this.tempAlertTextTop2 = alerts.temperature.top.message;
+  this.tempAlertTextBottom2 = alerts.temperature.bottom.message;
+
+  this.humAlertTextTop2 = alerts.bulbDiff.top.message;
+  this.humAlertTextBottom2 = alerts.bulbDiff.bottom.message;
+  
   
 }
 

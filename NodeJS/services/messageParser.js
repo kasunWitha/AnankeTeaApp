@@ -25,8 +25,9 @@ const parseDeviceMessage = (message) =>{
             var deviceName = "ANANKENODE001";
             console.log("real data");
         }
-        console.log("calc difference");
+        //console.log("calc difference");
         var bulbDifference = [calc.calculateBulbDiff(tempArr[0], humArr[0]), calc.calculateBulbDiff(tempArr[1], humArr[1])] ;
+        console.log("calc difference", deviceName);
         deviceController.findByName(deviceName, (doc)=>{
             console.log('deviceFound');
             var device = new Device(doc);

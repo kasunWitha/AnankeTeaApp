@@ -55,8 +55,8 @@ export class GraphcardComponent implements OnInit, OnChanges{
 
   count = 0;
 
-   maxVal : Number;
-  minVal :Number;
+  @Input() maxVal : Number;
+  @Input() minVal :Number;
 
   //graphmin = this.minVal-5;
   //graphmax = this.maxVal+5;
@@ -96,7 +96,7 @@ export class GraphcardComponent implements OnInit, OnChanges{
       this.multi = [...this.multi];
       this.trimGraph();
 
-      this.changeMaxMin(this.multi[0].series, this.multi[1].series);
+      //this.changeMaxMin(this.multi[0].series, this.multi[1].series);
       //this.changeMaxMin(Math.min(graph1Val, graph2Val));
       //this.toggleWarning(graph1Val);
       //this.changeCardStatus(graph1Val);

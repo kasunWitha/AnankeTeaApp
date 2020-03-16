@@ -5,6 +5,32 @@ settingController.findAll((docs)=>{
     settingsArr=docs;
 });
 
+var lastLowtimes = {
+    trough1:{
+        start:{
+            temp:{
+                top: Date.now(),
+                bottom: Date.now()
+            },
+            hum: {
+                top: Date.now(),
+                bottom: Date.now()
+            }
+        },
+
+        middle:{
+            temp:{
+                top: Date.now(),
+                bottom: Date.now()
+            },
+            hum: {
+                top: Date.now(),
+                bottom: Date.now()
+            }
+        }
+    }
+}
+
 
 
 const handleAlerts = (trough, position, data)=>{
@@ -68,6 +94,18 @@ const handleAlerts = (trough, position, data)=>{
     }else if(data.data.bulbDiff.bottom <3){
         alerts.bulbDiff.bottom.alertType=1;
         alerts.bulbDiff.bottom.message = "Alert! Bulb difference lower than 3";
+    }
+
+
+    if(position === "start"){
+        if(data.data.temperature.top <= troughSettings.criticalTemp){
+            lastLowtimes.trough1.start.temp.top = Date.now();
+        }else{
+            if((Date.now()-lastLowtimes.trough1.start.temp.top)/60000 >1){
+                alerts.temperature.top.alertType =2;
+                alerts.temperature.top.message = "Warning! Temperature of top has been above " + troughSettings.criticalTemp+" for more than 1 minute"
+            }
+        }
     }
 
     

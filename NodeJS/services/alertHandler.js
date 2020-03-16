@@ -13,21 +13,21 @@ const handleAlerts = (trough, position, data)=>{
         temperature:{
             top:{
                 alertType:0,
-                message: ""
+                message: "Top: No Alerts."
             },
             bottom:{
                 alertType:0,
-                message:""
+                message:"Bottom: No Alerts"
             }
         },
         bulbDiff:{
             top:{
                 alertType:0,
-                message: ""
+                message: "Top: No Alerts"
             },
             bottom:{
                 alertType:0,
-                message:""
+                message:"Bottom: No Alerts"
             }
             
         }
@@ -41,23 +41,23 @@ const handleAlerts = (trough, position, data)=>{
         console.log("Temperature top alert");
         alerts.temperature.top.alertType =1;
         console.log("alertTYpe", alerts.temperature.top.alertType =1);
-        alerts.temperature.top.message = "Alert: Temperature higher than "+troughSettings.criticalTemp+" degrees";
+        alerts.temperature.top.message = "Alert: Temperature of top higher than "+troughSettings.criticalTemp+" degrees";
     }
 
     if(data.data.temperature.bottom > troughSettings.criticalTemp){
         console.log("Temperature bottom alert");
         alerts.temperature.bottom.alertType =1;
-        alerts.temperature.bottom.message = "Alert: Temperature higher than "+troughSettings.criticalTemp+" degrees";
+        alerts.temperature.bottom.message = "Alert: Temperature of bottom higher than "+troughSettings.criticalTemp+" degrees";
     }
     console.log("cricial bd", troughSettings.criticalBubdiffHigh);
     if(data.data.bulbDiff.top > 7){
         console.log("bulbdiff top alert");
         alerts.bulbDiff.top.alertType=1;
-        alerts.bulbDiff.top.message = "Alert! Bulb difference higher than 7";
+        alerts.bulbDiff.top.message = "Alert! Bulb difference of top higher than 7";
        // data.findAll();
     }else if(data.data.bulbDiff.top<3){
         alerts.bulbDiff.top.alertType=1;
-        alerts.bulbDiff.top.message = "Alert! Bulb ddifference lower than 3";
+        alerts.bulbDiff.top.message = "Alert! Bulb difference of bottom lower than 3";
     }
 
     if(data.data.bulbDiff.bottom > 7){

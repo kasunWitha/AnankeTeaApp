@@ -1,55 +1,8 @@
 
 <div class="wrapper ">
-    <div class="sidebar" data-color="azure" data-background-color="white" data-image="../assets/img/sidebar-1.jpg">
-      <!--
-        Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
-
-        Tip 2: you can also add an image using data-image tag
-    -->
-      <div class="logo"><a class="simple-text logo-normal">
-        <img class="img-logo" src="assets/img/anankeLogo.png" />
-        </a></div>
-      <div class="sidebar-wrapper">
-        <ul class="nav">
-          <li [ngClass]="loadHome? 'nav-item active' : 'nav-item'" (click)="onHomeClick()" >
-            <a href="javascript:void(0)" class="nav-link" >
-              <i class="material-icons">home</i>
-              <p>Home</p>
-            </a>
-          </li>
-
-          <li [ngClass]="loadTrough? 'nav-item active' : 'nav-item'" (click)="onTrough1Click()">
-            <a class="nav-link" href="javascript:void(0)">
-              <i class="material-icons">spa</i>
-              <p>Trough 1</p>
-            </a>
-          </li> 
-          
-          <li [ngClass]="loadTrough2? 'nav-item active' : 'nav-item'" (click)="onTrough2Click()">
-            <a class="nav-link" href="javascript:void(0)">
-              <i class="material-icons">spa</i>
-              <p>Trough 2</p>
-            </a>
-          </li> 
-
-          
-         <!-- <li [ngClass]="loadSettings? 'nav-item active' : 'nav-item'" (click)="onSettingsClick()">
-            <a href="javascript:void(0)" class="nav-link">
-              <i class="material-icons">settings</i>
-              <p>Settings</p>
-            </a>
-          </li>-->
-         
-          
-          
-          
-          
-          
-          
-        </ul>
-      </div>
-    </div>
-    <div class="main-panel">
+    
+      
+    <div>
         <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
             <div class="container-fluid">
               <div class="navbar-wrapper">
@@ -68,9 +21,9 @@
         </nav>
         <div class="content">
             <div class="container-fluid">
-                <app-home *ngIf="loadHome" [message] = "message" (troughClicked)="troughClickHandler($event)"></app-home>
+                <app-home *ngIf="loadTrough" [message] = "message" (troughClicked)="troughClickHandler($event)"></app-home>
                 <app-settings *ngIf="loadSettings"></app-settings>
-                <app-trough *ngIf="loadTrough" [dataArr] = "message" ></app-trough>
+                <app-trough *ngIf="loadHome" [dataArr] = "message" ></app-trough>
                 
             </div>
         </div>

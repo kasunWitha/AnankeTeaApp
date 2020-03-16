@@ -2,7 +2,7 @@
 <div class="row">
     <div class="col md-12">
       <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-4">
           <app-graphcard 
           [topValue] = "topTemp" 
           [bottomValue]= "bottomTemp" 
@@ -11,23 +11,35 @@
           [alertTextBottom] = "tempAlertTextBottom"
           [alertStatus] = "tempAlertStatus"
           [flagg] ="flag1"
-          [minVal]="10"
-          [maxVal]="60"
+         
+          
           ></app-graphcard>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-4">
           
           <app-graphcard 
           [topValue] = "topHum" 
           [bottomValue]= "bottomHum" 
           [title] = "humidTitle"
-          [alertTextTop] = "tempAlertTextTop"
-          [alertTextBottom] = "tempAlertTextBottom"
+          [alertTextTop] = "'Top: No Alerts.'"
+          [alertTextBottom] = "'Bottom: No Alerts.'"
           [flagg] = "flag1"
-          [minVal]="50"
-          [maxVal]="100"
+         
           ></app-graphcard>
           
+        </div>
+
+        <div class="col-md-4">
+          <app-graphcard 
+          [topValue] = "topBulbdiff" 
+          [bottomValue]= "bottomBulbdiff"
+          [title] = "'Wet and Dry Bulb Difference'" 
+          [alertTextTop] = "humAlertTextTop"
+          [alertTextBottom] = "humAlertTextBottom"
+          [alertStatus] = "humAlertStatus"
+          [flagg] ="flag1"
+         
+          ></app-graphcard>
         </div>
       </div>
       
@@ -51,8 +63,7 @@
             [alertTextBottom] = "tempAlertTextBottom2"
             [alertStatus] = "tempAlertStatus2"
             [flagg] ="flag2"
-            [minVal]="10"
-            [maxVal]="60"
+           
             ></app-graphcard>
           </div>
           <div class="col-md-6">
@@ -65,8 +76,7 @@
               [alertTextBottom] = "humAlertTextBottom2"
               [alertStatus] = "humAlertStatus2"
               [flagg] = "flag2"
-              [minVal]="50"
-              [maxVal]="100"
+             
             ></app-graphcard>
             
           </div>
@@ -92,8 +102,7 @@
               [alertTextBottom] = "'Bottom: No Alerts'"
               [alertStatus] = "0"
               [flagg] ="flag1"
-              [minVal]="10"
-              [maxVal]="60"
+             
               ></app-graphcard>
             </div>
             <div class="col-md-6">
@@ -105,8 +114,7 @@
               [alertTextBottom] = "'Bottom: No Alerts'"
               [alertStatus] = "0"
               [flagg] = "flag1"
-              [minVal]="50"
-              [maxVal]="100"
+              
               ></app-graphcard>
               
             </div>

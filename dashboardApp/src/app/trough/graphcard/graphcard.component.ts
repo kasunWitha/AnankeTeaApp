@@ -55,11 +55,11 @@ export class GraphcardComponent implements OnInit, OnChanges{
 
   count = 0;
 
-  @Input() maxVal = 90;
-  @Input() minVal = 20;
+   maxVal : Number;
+  minVal :Number;
 
-  graphmin = this.minVal-5;
-  graphmax = this.maxVal+5;
+  //graphmin = this.minVal-5;
+  //graphmax = this.maxVal+5;
 
  // interval;
 
@@ -115,7 +115,11 @@ export class GraphcardComponent implements OnInit, OnChanges{
 
   changeMaxMin(array1, array2){
    this.maxVal = Math.max(Math.max.apply(Math,array1.map(function(o){return o.value})), Math.max.apply(Math,array2.map(function(o){return o.value})), 10)+1;
+   console.log("Max: max", this.maxVal);
+
    this.minVal = Math.min(Math.min.apply(Math,array1.map(function(o){return o.value})), Math.min.apply(Math,array2.map(function(o){return o.value})), 10)-1;
+
+   console.log("Min:", this.minVal);
   }
 
   trimGraph(){

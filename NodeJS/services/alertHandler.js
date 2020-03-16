@@ -98,10 +98,16 @@ const handleAlerts = (trough, position, data)=>{
 
 
     if(position === "start"){
+        console.log("In warning msg ctrl")
         if(data.data.temperature.top <= troughSettings.criticalTemp){
             lastLowtimes.trough1.start.temp.top = Date.now();
+            console.log("low temp",  lastLowtimes.trough1.start.temp.top )
         }else{
-            if((Date.now()-lastLowtimes.trough1.start.temp.top)/60000 >1){
+            var elapsedTime = (Date.now()-lastLowtimes.trough1.start.temp.top)/60000;
+            console.log("ElapsedTime", elapsedTime);
+
+            if( elapsedTime>1){
+                console.log()
                 alerts.temperature.top.alertType =2;
                 alerts.temperature.top.message = "Warning! Temperature of top has been above " + troughSettings.criticalTemp+" for more than 1 minute"
             }

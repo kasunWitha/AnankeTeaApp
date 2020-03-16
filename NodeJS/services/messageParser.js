@@ -55,7 +55,7 @@ const parseDeviceMessage = (message) =>{
                 }
             }
 
-            alerts = alertHandler.handleAlerts("trough1", 2, data);
+            alerts = alertHandler.handleAlerts("trough1", "start", data);
 
             broadcastHandler.broadcastMsg(device.trough.name, device.position, data, alerts);
             console.log("MessAGE BROADCASTED");

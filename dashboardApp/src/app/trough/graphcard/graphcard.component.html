@@ -14,22 +14,25 @@
               [xAxisLabel]="xAxisLabel"
               [yAxisLabel]="yAxisLabel"
               [yScaleMin]="minVal"
-              [yScaleMax]="maxVal" ></ngx-charts-line-chart>
+              [yScaleMax]="maxVal"
+              [legendPosition]="'below'"
+              [legend]="legendStat"  ></ngx-charts-line-chart>
       
     </div>
     <div class="card-body">
+      <div class="row" style="padding: 38px;"></div>
       <h4 class="card-title">{{title}}</h4>
       <p class="card-category"></p>
     </div>
     <div class="card-footer">
       <div class="stats">
-        <i class="material-icons">access_time</i> <h4><font color="gray">{{alertTextTop}}</font></h4>
+        <h6><font color="gray">{{alertTextTop}}</font></h6>
       </div>
       
     </div>
     <div class="card-footer">
       <div class="stats">
-        <i class="material-icons">access_time</i> <h4><font color="gray">{{alertTextBottom}}</font></h4>
+         <h6><font color="gray">{{alertTextBottom}}</font></h6>
       </div>
       
     </div>

@@ -1,5 +1,7 @@
-<h4>Sensor Pole 1</h4>
-<div class="row">
+
+
+<h4>Trough 1</h4>
+  <div class="row">
     <div class="col md-12">
       <div class="row">
         <div class="col-md-4">
@@ -11,6 +13,7 @@
           [alertTextBottom] = "tempAlertTextBottom"
           [alertStatus] = "tempAlertStatus"
           [flagg] ="flag1"
+          
           [minVal]="15"
           [maxVal]="55"
          
@@ -56,79 +59,68 @@
                 
   </div>
 
-  <h4>Sensor Pole 2</h4>
+  <h4>Trough 2</h4>
   <div class="row">
-      <div class="col md-12">
-        <div class="row">
-          <div class="col-md-6">
-            <app-graphcard 
-            [topValue] = "topTemp2" 
-            [bottomValue]= "bottomTemp2"
-            [title] = "tempTitle" 
-            [alertTextTop] = "tempAlertTextTop2"
-            [alertTextBottom] = "tempAlertTextBottom2"
-            [alertStatus] = "tempAlertStatus2"
-            [flagg] ="flag2"
-           
-            ></app-graphcard>
-          </div>
-          <div class="col-md-6">
-            
-            <app-graphcard 
-            [topValue] = "topHum2" 
-          [bottomValue]= "bottomHum2"
-            [title] = "humidTitle"
-              [alertTextTop] = "humAlertTextTop2"
-              [alertTextBottom] = "humAlertTextBottom2"
-              [alertStatus] = "humAlertStatus2"
-              [flagg] = "flag2"
-             
-            ></app-graphcard>
-            
-          </div>
+    <div class="col md-12">
+      <div class="row">
+        <div class="col-md-4">
+          <app-graphcard 
+          [topValue] = "topTemp2" 
+          [bottomValue]= "bottomTemp2" 
+          [title] = "tempTitle" 
+          [alertTextTop] = "tempAlertTextTop2"
+          [alertTextBottom] = "tempAlertTextBottom2"
+          [alertStatus] = "tempAlertStatus2"
+          [flagg] ="flag2"
+          
+          [minVal]="15"
+          [maxVal]="55"
+         
+          
+          ></app-graphcard>
         </div>
-        
-      </div>
-      
-           
-      
-                  
-    </div>
-
-
-    <h4>Sensor Pole 3</h4>
-    <div class="row">
-        <div class="col md-12">
-          <div class="row">
-            <div class="col-md-6">
-              <app-graphcard 
-              
-              [title] = "tempTitle" 
-              [alertTextTop] = "'Top: No Alerts'"
-              [alertTextBottom] = "'Bottom: No Alerts'"
-              [alertStatus] = "0"
-              [flagg] ="flag1"
-             
-              ></app-graphcard>
-            </div>
-            <div class="col-md-6">
-              
-              <app-graphcard 
-               
-              [title] = "humidTitle"
-              [alertTextTop] = "'Top: No Alerts'"
-              [alertTextBottom] = "'Bottom: No Alerts'"
-              [alertStatus] = "0"
-              [flagg] = "flag1"
-              
-              ></app-graphcard>
-              
-            </div>
-          </div>
+        <div class="col-md-4">
+          
+          <app-graphcard 
+          [topValue] = "topHum2" 
+          [bottomValue]= "bottomHum2" 
+          [title] = "humidTitle"
+          [alertTextTop] = "'Top: No Alerts.'"
+          [alertTextBottom] = "'Bottom: No Alerts.'"
+          [flagg] = "flag2"
+          [minVal]="50"
+          [maxVal]="100"
+         
+          ></app-graphcard>
           
         </div>
-        
-             
-        
-                    
+
+        <div class="col-md-4">
+          <app-graphcard 
+          [topValue] = "topBulbdiff2" 
+          [bottomValue]= "bottomBulbdiff2"
+          [title] = "'Wet and Dry Bulb Difference'" 
+          [alertTextTop] = "humAlertTextTop2"
+          [alertTextBottom] = "humAlertTextBottom2"
+          [alertStatus] = "humAlertStatus2"
+          [flagg] ="flag2"
+          [minVal]="0"
+          [maxVal]="10"
+         
+          ></app-graphcard>
+        </div>
       </div>
+      
+    </div>
+    
+         
+    
+                
+  </div>
+
+  
+        
+      
+
+
+    

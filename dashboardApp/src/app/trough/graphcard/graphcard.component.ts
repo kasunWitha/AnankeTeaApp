@@ -43,6 +43,7 @@ export class GraphcardComponent implements OnInit, OnChanges{
   
   
   // options for the chart
+  legendStat = false;
   showXAxis = true;
   showYAxis = true;
   gradient = false;

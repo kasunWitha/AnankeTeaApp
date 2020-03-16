@@ -39,14 +39,14 @@ export class TroughComponent implements OnInit, OnChanges {
   tempTitle = "Temperature";
   humidTitle = "Humidity";
 
-  tempAlertStatus = 1;
+  tempAlertStatus = 0;
   humAlertStatus = 0;
   tempAlertTextTop = "Top:   No alerts";
   tempAlertTextBottom = "Bottom:   No alerts";
   humAlertTextTop = "Top:   No alerts";
   humAlertTextBottom = "Bottom: No alerts";
 
-  tempAlertStatus2 = 1;
+  tempAlertStatus2 = 0;
   humAlertStatus2 = 0;
   tempAlertTextTop2 = "Top:   No alerts";
   tempAlertTextBottom2 = "Bottom:   No alerts";

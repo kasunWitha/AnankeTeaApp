@@ -106,7 +106,7 @@ const handleAlerts = (trough, position, data)=>{
             var elapsedTime = (Date.now()-lastLowtimes.trough1.start.temp.top)/60000;
             console.log("ElapsedTime", elapsedTime);
 
-            if( elapsedTime>timeOut){
+            if( elapsedTime>1){
                 console.log()
                 alerts.temperature.top.alertType =2;
                 alerts.temperature.top.message = "Warning! Temperature of top has been above " + troughSettings.criticalTemp+" for more than "+timeOut+ " minute"
@@ -153,7 +153,7 @@ const handleAlerts = (trough, position, data)=>{
             var elapsedTime = (Date.now()-lastLowtimes.trough1.start.hum.bottom)/60000;
             console.log("ElapsedTime", elapsedTime);
 
-            if( elapsedTime>timeOut){
+            if( elapsedTime>1){
                 console.log()
                 alerts.bulbDiff.bottom.alertType =2;
                 if(data.data.bulbDiff.bottom > 7){

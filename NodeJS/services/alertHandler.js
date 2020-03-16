@@ -4,7 +4,7 @@ var settingsArr;
 settingController.findAll((docs)=>{
     settingsArr=docs;
 });
-
+var timeOut = 10;
 var lastLowtimes = {
     trough1:{
         start:{
@@ -106,10 +106,10 @@ const handleAlerts = (trough, position, data)=>{
             var elapsedTime = (Date.now()-lastLowtimes.trough1.start.temp.top)/60000;
             console.log("ElapsedTime", elapsedTime);
 
-            if( elapsedTime>1){
+            if( elapsedTime>timeOut){
                 console.log()
                 alerts.temperature.top.alertType =2;
-                alerts.temperature.top.message = "Warning! Temperature of top has been above " + troughSettings.criticalTemp+" for more than 1 minute"
+                alerts.temperature.top.message = "Warning! Temperature of top has been above " + troughSettings.criticalTemp+" for more than "+timeOut+ " minute"
             }
         }
 
@@ -120,10 +120,10 @@ const handleAlerts = (trough, position, data)=>{
             var elapsedTime = (Date.now()-lastLowtimes.trough1.start.temp.bottom)/60000;
             console.log("ElapsedTime", elapsedTime);
 
-            if( elapsedTime>1){
+            if( elapsedTime>timeOut){
                 console.log()
                 alerts.temperature.bottom.alertType =2;
-                alerts.temperature.bottom.message = "Warning! Temperature of bottom has been above " + troughSettings.criticalTemp+" for more than 1 minute"
+                alerts.temperature.bottom.message = "Warning! Temperature of bottom has been above " + troughSettings.criticalTemp+" for more than "+timeOut+ " minute"
             }
         }
 
@@ -134,13 +134,13 @@ const handleAlerts = (trough, position, data)=>{
             var elapsedTime = (Date.now()-lastLowtimes.trough1.start.hum.top)/60000;
             console.log("ElapsedTime", elapsedTime);
 
-            if( elapsedTime>1){
+            if( elapsedTime>timeOut){
                 console.log()
                 alerts.bulbDiff.top.alertType =2;
                 if(data.data.bulbDiff.top > 7){
-                    alerts.bulbDiff.top.message = "Warning! Bulb difference of top has been above " + 7+" for more than 1 minute";
+                    alerts.bulbDiff.top.message = "Warning! Bulb difference of top has been above " + 7+" for more than 1 minutes";
                 }else{
-                    alerts.bulbDiff.top.message = "Warning! Bulb difference of top has been below " + 2+" for more than 1 minute";
+                    alerts.bulbDiff.top.message = "Warning! Bulb difference of top has been below " + 2+" for more than 1 minutes";
                 }
             }
 
@@ -153,13 +153,13 @@ const handleAlerts = (trough, position, data)=>{
             var elapsedTime = (Date.now()-lastLowtimes.trough1.start.hum.bottom)/60000;
             console.log("ElapsedTime", elapsedTime);
 
-            if( elapsedTime>1){
+            if( elapsedTime>timeOut){
                 console.log()
                 alerts.bulbDiff.bottom.alertType =2;
                 if(data.data.bulbDiff.bottom > 7){
-                    alerts.bulbDiff.bottom.message = "Warning! Bulb difference of bottom has been above " + 7+" for more than 1 minute";
+                    alerts.bulbDiff.bottom.message = "Warning! Bulb difference of bottom has been above " + 7+" for more than "+timeOut+ " minutes";
                 }else{
-                    alerts.bulbDiff.bottom.message = "Warning! Bulb difference of bottom has been below " + 2+" for more than 1 minute";
+                    alerts.bulbDiff.bottom.message = "Warning! Bulb difference of bottom has been below " + 2+" for more than "+timeOut+ " minutes";
                 }
             }
 
@@ -175,10 +175,10 @@ const handleAlerts = (trough, position, data)=>{
             var elapsedTime = (Date.now()-lastLowtimes.trough1.middle.temp.top)/60000;
             console.log("ElapsedTime", elapsedTime);
 
-            if( elapsedTime>1){
+            if( elapsedTime>timeOut){
                 console.log()
                 alerts.temperature.top.alertType =2;
-                alerts.temperature.top.message = "Warning! Temperature of top has been above " + troughSettings.criticalTemp+" for more than 1 minute"
+                alerts.temperature.top.message = "Warning! Temperature of top has been above " + troughSettings.criticalTemp+" for more than "+timeOut+ " minutes";
             }
         }
 
@@ -189,10 +189,10 @@ const handleAlerts = (trough, position, data)=>{
             var elapsedTime = (Date.now()-lastLowtimes.trough1.middle.temp.bottom)/60000;
             console.log("ElapsedTime", elapsedTime);
 
-            if( elapsedTime>1){
+            if( elapsedTime>timeOut){
                 console.log()
                 alerts.temperature.bottom.alertType =2;
-                alerts.temperature.bottom.message = "Warning! Temperature of bottom has been above " + troughSettings.criticalTemp+" for more than 1 minute"
+                alerts.temperature.bottom.message = "Warning! Temperature of bottom has been above " + troughSettings.criticalTemp+" for more than "+timeOut+ " minutes";
             }
         }
 
@@ -203,13 +203,13 @@ const handleAlerts = (trough, position, data)=>{
             var elapsedTime = (Date.now()-lastLowtimes.trough1.middle.hum.top)/60000;
             console.log("ElapsedTime", elapsedTime);
 
-            if( elapsedTime>1){
+            if( elapsedTime>timeOut){
                 console.log()
                 alerts.bulbDiff.top.alertType =2;
                 if(data.data.bulbDiff.top > 7){
-                    alerts.bulbDiff.top.message = "Warning! Bulb difference of top has been above " + 7+" for more than 1 minute";
+                    alerts.bulbDiff.top.message = "Warning! Bulb difference of top has been above " + 7+" for more than "+timeOut+ " minutes"
                 }else{
-                    alerts.bulbDiff.top.message = "Warning! Bulb difference of top has been below " + 2+" for more than 1 minute";
+                    alerts.bulbDiff.top.message = "Warning! Bulb difference of top has been below " + 2+" for more than "+timeOut+ " minutes";
                 }
             }
 
@@ -222,13 +222,13 @@ const handleAlerts = (trough, position, data)=>{
             var elapsedTime = (Date.now()-lastLowtimes.trough1.middle.hum.bottom)/60000;
             console.log("ElapsedTime", elapsedTime);
 
-            if( elapsedTime>1){
+            if( elapsedTime>timeOut){
                 console.log()
                 alerts.bulbDiff.bottom.alertType =2;
                 if(data.data.bulbDiff.bottom > 7){
-                    alerts.bulbDiff.top.message = "Warning! Bulb difference of bottom has been above " + 7+" for more than 1 minute";
+                    alerts.bulbDiff.top.message = "Warning! Bulb difference of bottom has been above " + 7+" for more than "+timeOut+ " minutes";
                 }else{
-                    alerts.bulbDiff.top.message = "Warning! Bulb difference of bottom has been below " + 2+" for more than 1 minute";
+                    alerts.bulbDiff.top.message = "Warning! Bulb difference of bottom has been below " + 2+" for more than "+timeOut+ " minutes";
                 }
             }
 

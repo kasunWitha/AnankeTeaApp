@@ -18,6 +18,7 @@ export class TroughComponent implements OnInit, OnChanges {
   topTemp = 0;
   topHum = 0;
   topBulbdiff = 0.0;
+  
 
   flag1 = false;
   flag2 = false;

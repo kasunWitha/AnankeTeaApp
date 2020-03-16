@@ -157,9 +157,9 @@ const handleAlerts = (trough, position, data)=>{
                 console.log()
                 alerts.bulbDiff.bottom.alertType =2;
                 if(data.data.bulbDiff.bottom > 7){
-                    alerts.bulbDiff.top.message = "Warning! Bulb difference of bottom has been above " + 7+" for more than 1 minute";
+                    alerts.bulbDiff.bottom.message = "Warning! Bulb difference of bottom has been above " + 7+" for more than 1 minute";
                 }else{
-                    alerts.bulbDiff.top.message = "Warning! Bulb difference of bottom has been below " + 2+" for more than 1 minute";
+                    alerts.bulbDiff.bottom.message = "Warning! Bulb difference of bottom has been below " + 2+" for more than 1 minute";
                 }
             }
 

@@ -65,7 +65,7 @@ export class GraphcardComponent implements OnInit, OnChanges{
  // interval;
 
   colorScheme = {
-    domain: ['#FFFFFF', '#87CEFA', '#FA8072', '#FF7F50', '#90EE90', '#9370DB']
+    domain: ['#777777', '#87CEFA', '#FA8072', '#FF7F50', '#90EE90', '#9370DB']
   };
 
   

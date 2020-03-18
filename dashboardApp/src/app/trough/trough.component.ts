@@ -15,25 +15,25 @@ export class TroughComponent implements OnInit, OnChanges {
     alerts:null
   };
 
-  topTemp = 0;
-  topHum = 0;
-  topBulbdiff = 0.0;
+  topTemp = null;
+  topHum = null;
+  topBulbdiff = null;
   
 
   flag1 = false;
   flag2 = false;
 
-  bottomTemp = 0;
-  bottomHum = 0;
-  bottomBulbdiff = 0.0;
+  bottomTemp = null;
+  bottomHum = null;
+  bottomBulbdiff = null;
 
-  topTemp2 = 0;
-  topHum2 = 0;
-  topBulbdiff2 = 0.0;
+  topTemp2 = null;
+  topHum2 = null;
+  topBulbdiff2 = null;
 
-  bottomTemp2 = 0;
-  bottomHum2 = 0;
-  bottomBulbdiff2 = 0.0;
+  bottomTemp2 = null;
+  bottomHum2 = null;
+  bottomBulbdiff2 = null;
   
 
   tempTitle = "Temperature";

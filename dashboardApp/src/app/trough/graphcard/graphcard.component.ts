@@ -89,8 +89,10 @@ export class GraphcardComponent implements OnInit, OnChanges{
 
     var graph1Val = topVal;
     var graph2Val = botVal;
+    if(topVal)
     this.multi[0].series.push( {  'name': new Date(new Date().getTime() ),
                                     'value':graph1Val} );
+    if(botVal)
     this.multi[1].series.push( {  'name': new Date(new Date().getTime() ),
                                     'value': graph2Val} );
      // console.log("multi", this.multi);

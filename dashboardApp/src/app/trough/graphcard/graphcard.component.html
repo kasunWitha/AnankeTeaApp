@@ -1,6 +1,7 @@
 <div class="card card-chart">
-    <div class="card-header card-header-primary" (click) = "onClick()" style="height: 30vh">
-      
+   
+    <div class="card-body">
+      <div class="row" style="height:30vh;">
         <ngx-charts-line-chart
               [animations]="true"
               [scheme]="colorScheme"
@@ -16,10 +17,10 @@
               [yScaleMin]="minVal"
               [yScaleMax]="maxVal"
               [legendPosition]="'below'"
-              [legend]="legendStat"  ></ngx-charts-line-chart>
-      
-    </div>
-    <div class="card-body">
+              [legend]="legendStat" 
+              [trimXAxisTicks]="false"
+              [rotateXAxisTicks]="true" ></ngx-charts-line-chart>
+      </div>
       <div class="row" style="padding: 38px;"></div>
       <h4 class="card-title">{{title}}</h4>
       <p class="card-category"></p>

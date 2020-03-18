@@ -19,7 +19,10 @@
               [legendPosition]="'below'"
               [legend]="legendStat" 
               [trimXAxisTicks]="false"
-              [rotateXAxisTicks]="true" ></ngx-charts-line-chart>
+              [rotateXAxisTicks]="true"
+              [referenceLines]="refLines"
+              [showRefLines]="true"
+              ></ngx-charts-line-chart>
       </div>
       <div class="row" style="padding: 38px;"></div>
       <h4 class="card-title">{{title}}</h4>
@@ -27,13 +30,13 @@
     </div>
     <div class="card-footer">
       <div class="stats">
-        <h6><font color="gray">{{alertTextTop}}</font></h6>
+        <h6 [ngClass]="alertStatusTop ==2? 'h6-red' : (alertStatusTop==1? 'div-yellow': 'h6-grey')">{{alertTextTop}}</h6>
       </div>
       
     </div>
     <div class="card-footer">
       <div class="stats">
-         <h6><font color="gray">{{alertTextBottom}}</font></h6>
+         <h6 [ngClass]="alertStatusBottom ==2? 'h6-red' : (alertStatusBottom==1? 'h6-yellow': 'h6-grey')">{{alertTextBottom}}</h6>
       </div>
       
     </div>

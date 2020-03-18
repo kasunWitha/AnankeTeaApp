@@ -20,13 +20,16 @@ export class GraphcardComponent implements OnInit, OnChanges{
 
   @Input() title: string;
 
-  @Input() alertStatus: Number = 0;
+  @Input() alertStatusTop: Number = 0;
+  @Input() alertStatusBottom : Number = 0;
 
   @Input() alertTextTop: string = "Top: No alerts."
 
   @Input() alertTextBottom: string = "Bottom: No alerts."
 
   view: any[] = [null, 400];
+
+  @Input() refLines: any[] = [];
 
   single: any[];
   multi: any[] = [

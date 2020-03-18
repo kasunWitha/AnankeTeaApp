@@ -44,7 +44,7 @@ export class NavigationComponent implements OnInit,OnChanges {
 
   handleAlerts(alerts){
     if(alerts.temperature.top.alertType==2 || alerts.temperature.bottom.alertType == 2 || alerts.bulbDiff.top.alertType==2 || alerts.bulbDiff.bottom.alertType == 2){
-      this.playBuzz();
+      this.playBell();
       
     }else if(alerts.temperature.top.alertType==1 || alerts.temperature.bottom.alertType == 1 || alerts.bulbDiff.top.alertType==1 || alerts.bulbDiff.bottom.alertType == 1){
       this.playBell();

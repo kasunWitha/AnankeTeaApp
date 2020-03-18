@@ -19,6 +19,25 @@ export class TroughComponent implements OnInit, OnChanges {
   topHum = null;
   topBulbdiff = null;
   
+  tempRef : any[]=[
+    {
+      name: "",
+      value: 50
+    }
+  ];
+
+  humRef : any[]=[];
+
+  bulbRef : any[]=[
+    {
+      name:"",
+      value:2
+    },
+    {
+      name:"",
+      value:7
+    }
+  ];
 
   flag1 = false;
   flag2 = false;
@@ -39,15 +58,19 @@ export class TroughComponent implements OnInit, OnChanges {
   tempTitle = "Temperature";
   humidTitle = "Humidity";
 
-  tempAlertStatus = 0;
-  humAlertStatus = 0;
+  tempAlertStatusTop = 0;
+  tempAlertStatusBottom = 0;
+  humAlertStatusTop = 0;
+  humAlertStatusBottom = 0;
   tempAlertTextTop = "Top:   No alerts";
   tempAlertTextBottom = "Bottom:   No alerts";
   humAlertTextTop = "Top:   No alerts";
   humAlertTextBottom = "Bottom: No alerts";
 
-  tempAlertStatus2 = 0;
-  humAlertStatus2 = 0;
+  tempAlertStatusTop2 = 0;
+  tempAlertStatusBottom2 = 0;
+  humAlertStatusTop2 = 0;
+  humAlertStatusBottom2 = 0;
   tempAlertTextTop2 = "Top:   No alerts";
   tempAlertTextBottom2 = "Bottom:   No alerts";
   humAlertTextTop2 = "Top:   No alerts";
@@ -95,56 +118,31 @@ export class TroughComponent implements OnInit, OnChanges {
 }
 
 handleAlerts(alerts){
-  if(alerts.temperature.top.alertType==2 || alerts.temperature.bottom.alertType == 2){
-    this.tempAlertStatus = 2;
-  }else if(alerts.temperature.top.alertType==1 || alerts.temperature.bottom.alertType == 1){
-    this.tempAlertStatus =  1;
-  }else{
-    this.tempAlertStatus = 0;
   
-  }
 
-  if(alerts.bulbDiff.top.alertType==2 || alerts.bulbDiff.bottom.alertType == 2){
-    this.humAlertStatus = 2;
-  }else if(alerts.bulbDiff.top.alertType==1 || alerts.bulbDiff.bottom.alertType == 1){
-    this.humAlertStatus =  1;
-  }else{
-    this.humAlertStatus = 0;
-  }
-
+  this.tempAlertStatusTop = alerts.temperature.top.alertType;
   this.tempAlertTextTop = alerts.temperature.top.message;
+  this,this.tempAlertStatusBottom = alerts.temperature.bottom.alertType;
   this.tempAlertTextBottom = alerts.temperature.bottom.message;
 
+  this.humAlertStatusTop = alerts.bulbDiff.top.alertType;
   this.humAlertTextTop = alerts.bulbDiff.top.message;
+  this.humAlertStatusBottom = alerts.bulbDiff.top.alertType;
   this.humAlertTextBottom = alerts.bulbDiff.bottom.message;
   
 }
 
 
 handleAlerts2(alerts){
-  if(alerts.temperature.top.alertType==2 || alerts.temperature.bottom.alertType == 2){
-    this.tempAlertStatus2 = 2;
-  }else if(alerts.temperature.top.alertType==1 || alerts.temperature.bottom.alertType == 1){
-    this.tempAlertStatus2 =  1;
-  }else{
-    this.tempAlertStatus2 = 0;
-  }
-
-  if(alerts.bulbDiff.top.alertType==2 || alerts.bulbDiff.bottom.alertType == 2){
-    this.humAlertStatus2 = 2;
-  }else if(alerts.bulbDiff.top.alertType==1 || alerts.bulbDiff.bottom.alertType == 1){
-    this.humAlertStatus2 =  1;
-  }else{
-    this.humAlertStatus2 = 0;
-  
-  }
-
+  this.tempAlertStatusTop2 = alerts.temperature.top.alertType;
   this.tempAlertTextTop2 = alerts.temperature.top.message;
+  this,this.tempAlertStatusBottom2 = alerts.temperature.bottom.alertType;
   this.tempAlertTextBottom2 = alerts.temperature.bottom.message;
 
+  this.humAlertStatusTop2 = alerts.bulbDiff.top.alertType;
   this.humAlertTextTop2 = alerts.bulbDiff.top.message;
+  this.humAlertStatusBottom2 = alerts.bulbDiff.top.alertType;
   this.humAlertTextBottom2 = alerts.bulbDiff.bottom.message;
-  
   
 }
 

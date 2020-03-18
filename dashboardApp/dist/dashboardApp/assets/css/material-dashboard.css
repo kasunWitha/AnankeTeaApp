@@ -19779,6 +19779,12 @@ div{
 .div-red{
   color: red;
 }
+.div-yellow{
+  color:#c27400;
+}
+.div-grey{
+  color: #999999;
+}
 
 
 .row-yellow{
@@ -19788,6 +19794,20 @@ div{
 .row-red{
   color: red;
 }
+
+h6{
+
+}
+.h6-red{
+  color:red;
+}
+.h6-yellow{
+  color:#c27400;
+}
+.h6-grey{
+  color: #999999;
+}
+
 
 
 

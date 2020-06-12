@@ -366,4 +366,4 @@ const parseNoJSONDeviceMsg4=(message)=>{
     
 }
 
-module.exports = {parseDeviceMessage}
+module.exports = {parseDeviceMessage1, parseDeviceMessage2, parseDeviceMessage3, parseDeviceMessage4}

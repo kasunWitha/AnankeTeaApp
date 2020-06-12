@@ -124,6 +124,130 @@
                 
   </div>
 
+  <h4><strong>Trough 3</strong></h4>
+  <div class="row">
+    <div class="col md-12">
+      <div class="row">
+        <div class="col-md-4">
+          <app-graphcard 
+          [topValue] = "topTemp3" 
+          [bottomValue]= "bottomTemp3" 
+          [title] = "tempTitle" 
+          [alertTextTop] = "tempAlertTextTop3"
+          [alertTextBottom] = "tempAlertTextBottom3"
+          [alertStatusTop] = "tempAlertStatusTop3"
+          [alertStatusBottom] = "tempAlertStatusBottom3"
+          [flagg] ="flag3"
+          [refLines]="tempRef"
+          [minVal]="15"
+          [maxVal]="55"
+         
+          
+          ></app-graphcard>
+        </div>
+        <div class="col-md-4">
+          
+          <app-graphcard 
+          [topValue] = "topHum3" 
+          [bottomValue]= "bottomHum3" 
+          [title] = "humidTitle"
+          [alertTextTop] = "'Top: No Alerts.'"
+          [alertTextBottom] = "'Bottom: No Alerts.'"
+          [flagg] = "flag3"
+          [minVal]="50"
+          [maxVal]="100"
+         
+          ></app-graphcard>
+          
+        </div>
+
+        <div class="col-md-4">
+          <app-graphcard 
+          [topValue] = "topBulbdiff3" 
+          [bottomValue]= "bottomBulbdiff3"
+          [title] = "'Wet and Dry Bulb Difference'" 
+          [alertTextTop] = "humAlertTextTop3"
+          [alertTextBottom] = "humAlertTextBottom3"
+          [alertStatusTop] = "humAlertStatusTop3"
+          [alertStatusBottom] = "humAlertStatusBottom3"
+          [flagg] ="flag3"
+          [minVal]="0"
+          [maxVal]="10"
+          [refLines]="bulbRef"
+         
+          ></app-graphcard>
+        </div>
+      </div>
+      
+    </div>
+    
+         
+    
+                
+  </div>
+
+  <h4><strong>Trough 4</strong></h4>
+  <div class="row">
+    <div class="col md-12">
+      <div class="row">
+        <div class="col-md-4">
+          <app-graphcard 
+          [topValue] = "topTemp4" 
+          [bottomValue]= "bottomTemp4" 
+          [title] = "tempTitle" 
+          [alertTextTop] = "tempAlertTextTop4"
+          [alertTextBottom] = "tempAlertTextBottom4"
+          [alertStatusTop] = "tempAlertStatusTop4"
+          [alertStatusBottom] = "tempAlertStatusBottom4"
+          [flagg] ="flag4"
+          [refLines]="tempRef"
+          [minVal]="15"
+          [maxVal]="55"
+         
+          
+          ></app-graphcard>
+        </div>
+        <div class="col-md-4">
+          
+          <app-graphcard 
+          [topValue] = "topHum4" 
+          [bottomValue]= "bottomHum4" 
+          [title] = "humidTitle"
+          [alertTextTop] = "'Top: No Alerts.'"
+          [alertTextBottom] = "'Bottom: No Alerts.'"
+          [flagg] = "flag4"
+          [minVal]="50"
+          [maxVal]="100"
+         
+          ></app-graphcard>
+          
+        </div>
+
+        <div class="col-md-4">
+          <app-graphcard 
+          [topValue] = "topBulbdiff4" 
+          [bottomValue]= "bottomBulbdiff4"
+          [title] = "'Wet and Dry Bulb Difference'" 
+          [alertTextTop] = "humAlertTextTop4"
+          [alertTextBottom] = "humAlertTextBottom4"
+          [alertStatusTop] = "humAlertStatusTop4"
+          [alertStatusBottom] = "humAlertStatusBottom4"
+          [flagg] ="flag4"
+          [minVal]="0"
+          [maxVal]="10"
+          [refLines]="bulbRef"
+         
+          ></app-graphcard>
+        </div>
+      </div>
+      
+    </div>
+    
+         
+    
+                
+  </div>
+
   
         
       

@@ -1,6 +1,6 @@
 const WebSocket = require('ws');
 
-const url = 'ws://15.206.145.171:3000';
+const url = 'ws://localhost:3000';
 
 const connection = new WebSocket(url);
 

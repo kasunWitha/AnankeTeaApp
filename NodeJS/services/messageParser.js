@@ -268,7 +268,9 @@ const getHour = ()=>{
 const parseNoJSONDeviceMsg1=(message)=>{
     try{
 
-        var editedMsg = message.replace(/{ANANKETEANODE001:/g, "").replace(/}/g, "").replace("[", "").replace("]", "")
+
+        
+        var editedMsg = message.replace(/{ANANKETEANODE005:/g, "").replace(/}/g, "").replace("[", "").replace("]", "")
         var arr = editedMsg.split(",");
         var humArray = arr[0].replace("Humidity:", "").replace(/%/g, "").replace(/\t/g, "").trim().split(" ");
         var tempArray = arr[1].replace("Temperature :", "").replace(/\*C/g, "").replace(/\t/g, "").trim().split(" ");
@@ -294,7 +296,7 @@ const parseNoJSONDeviceMsg1=(message)=>{
 const parseNoJSONDeviceMsg2=(message)=>{
     try{
 
-        var editedMsg = message.replace(/{ANANKETEANODE001:/g, "").replace(/}/g, "").replace("[", "").replace("]", "")
+        var editedMsg = message.replace(/{ANANKETEANODE006:/g, "").replace(/}/g, "").replace("[", "").replace("]", "")
         var arr = editedMsg.split(",");
         var humArray = arr[0].replace("Humidity:", "").replace(/%/g, "").replace(/\t/g, "").trim().split(" ");
         var tempArray = arr[1].replace("Temperature :", "").replace(/\*C/g, "").replace(/\t/g, "").trim().split(" ");
@@ -319,7 +321,7 @@ const parseNoJSONDeviceMsg2=(message)=>{
 const parseNoJSONDeviceMsg3=(message)=>{
     try{
 
-        var editedMsg = message.replace(/{ANANKETEANODE001:/g, "").replace(/}/g, "").replace("[", "").replace("]", "")
+        var editedMsg = message.replace(/{ANANKETEANODE007:/g, "").replace(/}/g, "").replace("[", "").replace("]", "")
         var arr = editedMsg.split(",");
         var humArray = arr[0].replace("Humidity:", "").replace(/%/g, "").replace(/\t/g, "").trim().split(" ");
         var tempArray = arr[1].replace("Temperature :", "").replace(/\*C/g, "").replace(/\t/g, "").trim().split(" ");
@@ -344,7 +346,7 @@ const parseNoJSONDeviceMsg3=(message)=>{
 const parseNoJSONDeviceMsg4=(message)=>{
     try{
 
-        var editedMsg = message.replace(/{ANANKETEANODE001:/g, "").replace(/}/g, "").replace("[", "").replace("]", "")
+        var editedMsg = message.replace(/{ANANKETEANODE008:/g, "").replace(/}/g, "").replace("[", "").replace("]", "")
         var arr = editedMsg.split(",");
         var humArray = arr[0].replace("Humidity:", "").replace(/%/g, "").replace(/\t/g, "").trim().split(" ");
         var tempArray = arr[1].replace("Temperature :", "").replace(/\*C/g, "").replace(/\t/g, "").trim().split(" ");

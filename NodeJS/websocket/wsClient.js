@@ -38,7 +38,7 @@ client.on('connect', function () {
 
 client.on('message', function (topic,message) {
 
-    //console.log(topic)
+    console.log(topic)
     
     if(topic === 'a6140451/g9440826/d3605069/PUB'){
         console.log('device1', message.toString());
@@ -49,7 +49,7 @@ client.on('message', function (topic,message) {
     }else if(topic === 'a6140451/g9440826/d0003745/PUB'){
         console.log('device3', message.toString());
         messageParser.parseDeviceMessage3(message.toString());
-    }else if(topic === 'a6140451/g9440826/loc/PUB'){
+    }else if(topic === 'a6140451/g9440826/d6992123/PUB'){
         console.log('device4', message.toString());
         messageParser.parseDeviceMessage4(message.toString());
     }

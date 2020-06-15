@@ -1,0 +1,1 @@
+{"options":{},"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_","ns":"AnankeTeaApp.settings"},{"v":{"$numberInt":"2"},"unique":true,"key":{"trough":{"$numberInt":"1"}},"name":"trough_1","ns":"AnankeTeaApp.settings","background":true}],"uuid":"dd1e71d0fecb47b6b8a4a5e07d1b7a78"}

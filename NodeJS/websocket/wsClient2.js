@@ -11,5 +11,6 @@ connection.onopen=()=>{
 const sendMessage = (message)=>{
     connection.send(message);
 }
+//sends message
 
 module.exports = {sendMessage}

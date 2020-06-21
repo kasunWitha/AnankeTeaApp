@@ -9,6 +9,8 @@ const broadcastMsg=(trough, position, data, alerts)=>{
         alerts: alerts
     }
 
+    console.log("bROADCAST MAS", message)
+
     ws.sendMessage(JSON.stringify(message));
 
 }

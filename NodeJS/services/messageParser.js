@@ -60,9 +60,9 @@ const parseDeviceMessage1 = (message) =>{
             broadcastHandler.broadcastMsg(device.trough.name, device.position, data, alerts);
             console.log("MessAGE BROADCASTED");
 
-            troughController.addData(device.trough.name, getDate(), getHour(), device.position, data, (res)=>{
-                console.log(res);
-            });
+            // troughController.addData(device.trough.name, getDate(), getHour(), device.position, data, (res)=>{
+            //     console.log(res);
+            // });
         });
     }catch(err){
         console.log("Inerr");
@@ -121,9 +121,9 @@ const parseDeviceMessage2 = (message) =>{
             broadcastHandler.broadcastMsg(device.trough.name, device.position, data, alerts);
             console.log("MessAGE BROADCASTED");
 
-            troughController.addData(device.trough.name, getDate(), getHour(), device.position, data, (res)=>{
-                console.log(res);
-            });
+            // troughController.addData(device.trough.name, getDate(), getHour(), device.position, data, (res)=>{
+            //     console.log(res);
+            // });
         });
     }catch(err){
         console.log("Inerr");
@@ -182,9 +182,9 @@ const parseDeviceMessage3 = (message) =>{
             broadcastHandler.broadcastMsg(device.trough.name, device.position, data, alerts);
             console.log("MessAGE BROADCASTED");
 
-            troughController.addData(device.trough.name, getDate(), getHour(), device.position, data, (res)=>{
-                console.log(res);
-            });
+            // troughController.addData(device.trough.name, getDate(), getHour(), device.position, data, (res)=>{
+            //     console.log(res);
+            // });
         });
     }catch(err){
         console.log("Inerr");
@@ -243,9 +243,9 @@ const parseDeviceMessage4 = (message) =>{
             broadcastHandler.broadcastMsg(device.trough.name, device.position, data, alerts);
             console.log("MessAGE BROADCASTED");
 
-            troughController.addData(device.trough.name, getDate(), getHour(), device.position, data, (res)=>{
-                console.log(res);
-            });
+            // troughController.addData(device.trough.name, getDate(), getHour(), device.position, data, (res)=>{
+            //     console.log(res);
+            // });
         });
     }catch(err){
         console.log("Inerr");

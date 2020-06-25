@@ -57,12 +57,17 @@ const parseDeviceMessage1 = (message) =>{
 
             alerts = alertHandler.handleAlerts("trough1", "start", data);
 
-            broadcastHandler.broadcastMsg(device.trough.name, device.position, data, alerts);
-            console.log("MessAGE BROADCASTED");
+            stringData = JSON.stringify(data);
+            if(!stringData.includes("NaN")){
+                broadcastHandler.broadcastMsg(device.trough.name, device.position, data, alerts);
+                console.log("MessAGE BROADCASTED");
 
-            troughController.addData(device.trough.name, getDate(), getHour(), device.position, data, (res)=>{
-                 console.log(res);
-            });
+                troughController.addData(device.trough.name, getDate(), getHour(), device.position, data, (res)=>{
+                     console.log(res);
+                });
+            }else{
+                console.log("invalid Data");
+            }
         });
     }catch(err){
         console.log("Inerr");
@@ -118,12 +123,17 @@ const parseDeviceMessage2 = (message) =>{
 
             alerts = alertHandler.handleAlerts("trough2", "start", data);
 
-            broadcastHandler.broadcastMsg(device.trough.name, device.position, data, alerts);
-            console.log("MessAGE BROADCASTED");
+            stringData = JSON.stringify(data);
+            if(!stringData.includes("NaN")){
+                broadcastHandler.broadcastMsg(device.trough.name, device.position, data, alerts);
+                console.log("MessAGE BROADCASTED");
 
-            troughController.addData(device.trough.name, getDate(), getHour(), device.position, data, (res)=>{
-                 console.log(res);
-            });
+                troughController.addData(device.trough.name, getDate(), getHour(), device.position, data, (res)=>{
+                     console.log(res);
+                });
+            }else{
+                console.log("invalid Data");
+            }
         });
     }catch(err){
         console.log("Inerr");
@@ -179,12 +189,17 @@ const parseDeviceMessage3 = (message) =>{
 
             alerts = alertHandler.handleAlerts("trough3", "start", data);
 
-            broadcastHandler.broadcastMsg(device.trough.name, device.position, data, alerts);
-            console.log("MessAGE BROADCASTED");
+            stringData = JSON.stringify(data);
+            if(!stringData.includes("NaN")){
+                broadcastHandler.broadcastMsg(device.trough.name, device.position, data, alerts);
+                console.log("MessAGE BROADCASTED");
 
-            troughController.addData(device.trough.name, getDate(), getHour(), device.position, data, (res)=>{
-                 console.log(res);
-            });
+                troughController.addData(device.trough.name, getDate(), getHour(), device.position, data, (res)=>{
+                     console.log(res);
+                });
+            }else{
+                console.log("invalid Data");
+            }
         });
     }catch(err){
         console.log("Inerr");
@@ -240,12 +255,17 @@ const parseDeviceMessage4 = (message) =>{
 
             alerts = alertHandler.handleAlerts("trough4", "start", data);
 
-            broadcastHandler.broadcastMsg(device.trough.name, device.position, data, alerts);
-            console.log("MessAGE BROADCASTED");
+            stringData = JSON.stringify(data);
+            if(!stringData.includes("NaN")){
+                broadcastHandler.broadcastMsg(device.trough.name, device.position, data, alerts);
+                console.log("MessAGE BROADCASTED");
 
-            troughController.addData(device.trough.name, getDate(), getHour(), device.position, data, (res)=>{
-                 console.log(res);
-            });
+                troughController.addData(device.trough.name, getDate(), getHour(), device.position, data, (res)=>{
+                     console.log(res);
+                });
+            }else{
+                console.log("invalid Data");
+            }
         });
     }catch(err){
         console.log("Inerr");

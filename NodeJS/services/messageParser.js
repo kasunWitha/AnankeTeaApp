@@ -55,10 +55,11 @@ const parseDeviceMessage1 = (message) =>{
                 }
             }
 
-            alerts = alertHandler.handleAlerts("trough1", "start", data);
+            
 
             stringData = JSON.stringify(data);
             if(!stringData.includes("NaN")){
+                alerts = alertHandler.handleAlerts("trough1", "start", data);
                 broadcastHandler.broadcastMsg(device.trough.name, device.position, data, alerts);
                 console.log("MessAGE BROADCASTED");
 
@@ -121,10 +122,10 @@ const parseDeviceMessage2 = (message) =>{
                 }
             }
 
-            alerts = alertHandler.handleAlerts("trough2", "start", data);
-
+            
             stringData = JSON.stringify(data);
             if(!stringData.includes("NaN")){
+                alerts = alertHandler.handleAlerts("trough2", "start", data);
                 broadcastHandler.broadcastMsg(device.trough.name, device.position, data, alerts);
                 console.log("MessAGE BROADCASTED");
 
@@ -187,10 +188,11 @@ const parseDeviceMessage3 = (message) =>{
                 }
             }
 
-            alerts = alertHandler.handleAlerts("trough3", "start", data);
+            
 
             stringData = JSON.stringify(data);
             if(!stringData.includes("NaN")){
+                alerts = alertHandler.handleAlerts("trough3", "start", data);
                 broadcastHandler.broadcastMsg(device.trough.name, device.position, data, alerts);
                 console.log("MessAGE BROADCASTED");
 
@@ -253,10 +255,11 @@ const parseDeviceMessage4 = (message) =>{
                 }
             }
 
-            alerts = alertHandler.handleAlerts("trough4", "start", data);
+            
 
             stringData = JSON.stringify(data);
             if(!stringData.includes("NaN")){
+                alerts = alertHandler.handleAlerts("trough4", "start", data);
                 broadcastHandler.broadcastMsg(device.trough.name, device.position, data, alerts);
                 console.log("MessAGE BROADCASTED");
 

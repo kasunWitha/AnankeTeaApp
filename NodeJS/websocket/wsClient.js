@@ -29,9 +29,9 @@ client  = mqtt.connect('mqtt://138.197.92.157:1883',options);
 
 client.on('connect', function () {
     console.log('mqtt connected ... ');
-     client.subscribe('a6140451/g9440826/d3605069/PUB');
-     client.subscribe('a6140451/g9440826/d1310166/PUB');
      client.subscribe('a6140451/g9440826/d0003745/PUB');
+     client.subscribe('a6140451/g9440826/d0003746/PUB');
+     client.subscribe('a6140451/g9440826/d0003747/PUB');
      client.subscribe('a6140451/g9440826/d6992123/PUB');
 });
 
@@ -40,13 +40,13 @@ client.on('message', function (topic,message) {
 
     console.log(topic)
     
-    if(topic === 'a6140451/g9440826/d3605069/PUB'){
+    if(topic === 'a6140451/g9440826/d0003745/PUB'){
         console.log('device1', message.toString());
         messageParser.parseDeviceMessage1(message.toString());
-    }else if(topic === 'a6140451/g9440826/d1310166/PUB'){
+    }else if(topic === 'a6140451/g9440826/d0003746/PUB'){
         console.log('device2', message.toString());
         messageParser.parseDeviceMessage2(message.toString());
-    }else if(topic === 'a6140451/g9440826/d0003745/PUB'){
+    }else if(topic === 'a6140451/g9440826/d0003747/PUB'){
         console.log('device3', message.toString());
         messageParser.parseDeviceMessage3(message.toString());
     }else if(topic === 'a6140451/g9440826/d6992123/PUB'){
